@@ -695,3 +695,48 @@ section[id], #main { scroll-margin-top: calc(var(--head-h) + 1rem); }
 .legal strong { color: var(--fg); font-weight: 500; }
 .legal ul { margin: 0; padding-left: 1.25rem; }
 .legal li + li { margin-top: .75rem; }
+
+/* --- Download page --------------------------------------------------------- */
+.sec-dl { padding-block: clamp(3rem, 6vw, 5rem) clamp(4rem, 8vw, 6.5rem); }
+.dl-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 6fr);
+  gap: clamp(2rem, 5vw, 4.5rem);
+  align-items: start;
+}
+.dl-tile { position: sticky; top: calc(var(--head-h) + 2rem); }
+.dl-copy .eyebrow + h1 { margin-top: 1rem; }
+.dl-copy h1 { font-size: clamp(1.9rem, 3.4vw, 2.6rem); line-height: 1.1; letter-spacing: -.02em; }
+.dl-ver { margin-top: .75rem; color: var(--faint); }
+.dl-list {
+  list-style: none;
+  margin: 2.25rem 0 0;
+  padding: 0;
+  display: grid;
+  gap: 1.5rem;
+}
+.dl-row {
+  display: grid;
+  grid-template-columns: 24px minmax(0, 1fr);
+  gap: 1rem;
+  align-items: start;
+}
+.dl-os { width: 24px; height: 24px; margin-top: .2rem; color: var(--fg); }
+.dl-link {
+  color: var(--fg);
+  font-weight: 600;
+  font-size: 1.125rem;
+  letter-spacing: -.01em;
+  text-decoration: none;
+  border-bottom: 1px solid var(--acc);
+}
+.dl-link:hover { color: var(--acc); }
+.dl-size { margin-left: .4rem; color: var(--faint); }
+.dl-sub { margin-top: .35rem; color: var(--fg2); font-size: .9375rem; }
+.dl-fine { margin-top: 2rem; max-width: 52ch; }
+.dl-fine + .dl-fine { margin-top: .75rem; }
+.dl-copy .cta-row { margin-top: 1.5rem; }
+@media (max-width: 820px) {
+  .dl-grid { grid-template-columns: 1fr; }
+  .dl-tile { position: static; order: 2; }
+}
