@@ -15,7 +15,7 @@
 //     re-opens the banner so consent can be withdrawn as easily as given.
 (function () {
   var GA_ID = "G-VKQMD5HFYX";     // Hot Spotter — GA4 property
-  var PRIVACY_URL = "privacy.html";
+  var PRIVACY_URL = "/privacy.html";
   var KEY = "hs-consent";         // "granted" | "denied"
   if (!GA_ID) return;
 

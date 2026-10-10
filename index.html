@@ -3,11 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Hot Spotter — Album Loudness Meter (LUFS, True Peak)</title>
-<meta name="description" content="An album loudness meter for producers: LUFS, true peak and dynamics for every track, with loudness-tinted waveforms that show where a master runs hot.">
+<title>Hot Spotter — Album Loudness Meter for Producers (LUFS)</title>
+<meta name="description" content="An album loudness meter for producers: see every track's LUFS against your album's own average, plus true peak and dynamics. Scan 20 tracks free.">
 <link rel="canonical" href="https://hotspotter.studio/">
 <meta name="theme-color" content="#12151d">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
 <link rel="icon" type="image/svg+xml" href="img/favicon.svg">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Hot Spotter">
 <meta property="og:title" content="Hot Spotter — Album Loudness Meter">
@@ -21,34 +23,97 @@
 <meta name="twitter:title" content="Hot Spotter — Album Loudness Meter">
 <meta name="twitter:description" content="Read the whole record at a glance. Loudness-tinted waveforms show exactly where a track runs hot. Scan 20 tracks for free.">
 <link rel="preload" href="fonts/SpaceGrotesk-var.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/SpaceMono-Regular.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="site.css">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
-  "name": "Hot Spotter",
-  "operatingSystem": "macOS, Windows",
-  "applicationCategory": "MultimediaApplication",
-  "description": "Album loudness meter and QC app for producers and musicians. Per-track LUFS, true peak, loudness range and dynamics, loudness-tinted waveforms, pinned notes, and automatic change-tracking between mastering passes.",
-  "softwareVersion": "0.71.3",
-  "url": "https://hotspotter.studio/",
-  "downloadUrl": "https://hotspotter.studio/download.html",
-  "screenshot": "https://hotspotter.studio/img/og-image.png",
-  "offers": { "@type": "Offer", "price": "20", "priceCurrency": "USD", "description": "Scan 20 tracks for free, then $20 once. No subscription." },
-  "publisher": { "@type": "Organization", "name": "Sound-O-Vision" }
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://hotspotter.studio/#website",
+      "url": "https://hotspotter.studio/",
+      "name": "Hot Spotter",
+      "inLanguage": "en",
+      "publisher": {
+        "@id": "https://hotspotter.studio/#org"
+      }
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://hotspotter.studio/#org",
+      "name": "Sound-O-Vision",
+      "url": "https://hotspotter.studio/",
+      "logo": "https://hotspotter.studio/apple-touch-icon.png",
+      "founder": {
+        "@id": "https://hotspotter.studio/#djcutman"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://hotspotter.studio/#djcutman",
+      "name": "DJ Cutman",
+      "url": "https://djcutman.com",
+      "sameAs": [
+        "https://www.instagram.com/videogamedj/"
+      ]
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://hotspotter.studio/#app",
+      "name": "Hot Spotter",
+      "url": "https://hotspotter.studio/",
+      "description": "An album loudness meter for producers and musicians. Drop in a folder of mixes or masters and see every track's integrated LUFS, true peak, loudness range and dynamics (PSR), with loudness and tonal balance measured against the album's own average. Loudness-tinted waveforms show where a track runs hot, and timestamped mix notes keep your fixes in one place.",
+      "applicationCategory": "MultimediaApplication",
+      "applicationSubCategory": "Album loudness meter",
+      "operatingSystem": "macOS 13 or later; Windows 10 or 11 (64-bit, beta)",
+      "softwareVersion": "0.75.0",
+      "downloadUrl": "https://hotspotter.studio/download.html",
+      "releaseNotes": "https://github.com/soundovision/hotspotter/releases",
+      "image": "https://hotspotter.studio/img/og-image.png",
+      "screenshot": [
+        "https://hotspotter.studio/img/app-track-details.webp",
+        "https://hotspotter.studio/img/app-album-overview.webp"
+      ],
+      "featureList": [
+        "Scans a whole album folder of WAV, AIFF, FLAC and MP3 files in one go",
+        "Integrated LUFS, true peak (dBTP), loudness range (LRA), short-term loudness over time and dynamics (PSR) for every track",
+        "Loudness and five-band tonal balance shown against the album's own average or a reference you load, or loudness against a LUFS target you set",
+        "Loudness-tinted waveforms with an optional short-term loudness contour",
+        "Timestamped mix notes (Spots) collected in a Spot Report you can export or copy",
+        "History of every change between scans",
+        "Runs on your computer: no uploads, no account"
+      ],
+      "offers": {
+        "@type": "Offer",
+        "price": "20",
+        "priceCurrency": "USD",
+        "url": "https://hotspotter.studio/download.html",
+        "description": "Scan 20 tracks for free, then $20 once. No subscription."
+      },
+      "author": {
+        "@id": "https://hotspotter.studio/#djcutman"
+      },
+      "publisher": {
+        "@id": "https://hotspotter.studio/#org"
+      }
+    }
+  ]
 }
 </script>
+<!-- FAQPage: must mirror the visible #faq questions and answers word for word. Re-sync it whenever the FAQ copy changes. -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "FAQPage",
+  "@id": "https://hotspotter.studio/#faq",
   "mainEntity": [
     {
       "@type": "Question",
       "name": "What does Hot Spotter measure?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Per track: integrated LUFS, true peak (dBTP), loudness range (LRA), max short-term loudness, dynamics (PSR), and a five-band tonal balance (sub, bass, low-mid, high-mid, high) — each shown against the album's own average. Per album: mean loudness, spread, and a full change history between runs."
+        "text": "Per track: integrated LUFS, true peak (dBTP), loudness range (LRA), short-term loudness over time, dynamics (PSR), and a five-band tonal balance (sub, bass, low-mid, high-mid, high). Loudness and tonal balance are shown against the album's own average. Per album: mean loudness, loudness spread, and a full change history between runs."
       }
     },
     {
@@ -56,23 +121,23 @@
       "name": "Do my tracks need to hit −14 LUFS?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "No. −14 is a playback normalization number, not a mastering order. Hot Spotter cares whether your album is consistent with itself — that track five doesn't jump out of the record. If you do want a fixed number, click the album average and type one; it becomes your target."
+        "text": "Good gravy, they don't! −14 LUFS is a playback normalization number, not a mastering order. Hot Spotter shows you whether your album is consistent with itself. Does track five jump out of bounds? Is that intro too quiet, and will it get people to skip? If you do want a fixed number, click the album average and type one; it becomes your target. Or load up your favorite album or track and use it as a reference."
       }
     },
     {
       "@type": "Question",
-      "name": "What formats does it read?",
+      "name": "What formats does Hot Spotter analyze?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "WAV, AIFF, FLAC and MP3. Mixed-format albums get a warning banner and per-track format chips, and a WAV+MP3 pair of the same song is detected and shown as one track."
+        "text": "WAV, AIFF, FLAC and MP3. If a folder mixes MP3s with lossless files, Hot Spotter asks which formats to analyze, as lossy formats like MP3 can meter louder than lossless formats like WAV. If you have MP3s alongside lossless versions, no worries: a WAV+MP3 pair of the same song is detected and shown as one track."
       }
     },
     {
       "@type": "Question",
-      "name": "Is my audio uploaded anywhere?",
+      "name": "Is my audio uploaded anywhere? (Are you scrapin' my data??)",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Never. Hot Spotter is a native desktop app; analysis runs on your machine and the app makes no network requests except checking for updates."
+        "text": "Absolutely not! Hot Spotter is a native desktop app, analysis runs on your machine, and the app makes no network requests except checking for updates and activating or deactivating your license key."
       }
     },
     {
@@ -80,15 +145,31 @@
       "name": "Mac or Windows?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Both. macOS 13 Ventura or later (Apple Silicon and Intel), and Windows 10 or 11 (64-bit). Same app, same engine, one download page."
+        "text": "Both. macOS 13 Ventura or later (Apple Silicon and Intel), and Windows 10 or 11 (64-bit, beta). Same app, same engine, one download page."
       }
     },
     {
       "@type": "Question",
-      "name": "What does it cost?",
+      "name": "What about pricing? How much does Hot Spotter cost?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Scan 20 tracks for free — no account, no time limit. After that it's $20. No subscription — buy once and own it for life, future updates included. One key covers three computers, and there's a 14-day refund if it isn't for you. Something missing? Tell us."
+        "text": "You can scan 20 tracks for free — no account, no time limit. After that, I ask $20 to help support development. No subscription, no locked features, no DLC. Buy Hot Spotter once and own it for life, future updates included. One key covers three computers, and there's a 14-day refund if it isn't for you. Something missing? Tell us."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does the free version count tracks?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The free version analyzes 20 tracks. A track is a file name inside an album folder, counted once: re-exporting a master to the same file name is free, renaming it or moving the folder counts as new, and a WAV+MP3 pair of the same song counts once. References never count, and neither do failed or cancelled runs. Your reports and history stay readable after the 20 are used."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Who made this?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "I'm Chris, also known as DJ Cutman, a DJ and producer running my own label. I built Hot Spotter to help me get more consistent playback on streaming services, and as my friends found out about the project, they asked me to develop it into an app. Found a bug, or have a feature request? Accidentally scanned the wrong folder and used up all your free tracks? Send me an email or DM me on Instagram @VideoGameDJ."
       }
     }
   ]
@@ -105,7 +186,7 @@
       <img src="img/favicon.svg" alt="" width="24" height="24" decoding="async">
       <span class="wordmark-name">Hot Spotter</span>
       <!-- version: the latest PUBLIC release (github.com/soundovision/hotspotter/releases), not the working tree; hand-synced with the schema.org softwareVersion above -->
-      <span class="ver">v0.71.3</span>
+      <span class="ver">v0.75.0</span>
     </a>
     <nav class="head-nav" aria-label="Primary">
       <a class="navlink" href="#how">How it works</a>
@@ -133,7 +214,7 @@
 
       <figure class="frame hero-shot rise rise-shot">
         <div class="chrome" aria-hidden="true"><span></span><span></span><span></span></div>
-        <a class="zoom" href="img/app-track-details.webp" target="_blank" rel="noopener" aria-label="Open full-size screenshot"><img src="img/app-track-details.webp" width="2400" height="1534" fetchpriority="high" decoding="async" alt="Hot Spotter's Track Details view: a tracklist of 18 tinted waveforms on the left, and the focused track &quot;The Deli — Ocarina of Time Flip&quot; with its loudness-tinted waveform, LUFS stats and a pinned note on the right."></a>
+        <a class="zoom" href="img/app-track-details.webp" target="_blank" rel="noopener" aria-label="Open full-size screenshot: Track Details"><img src="img/app-track-details.webp" srcset="img/app-track-details-1200.webp 1200w, img/app-track-details.webp 2400w" sizes="(max-width: 900px) calc(100vw - 2.5rem), 56vw" width="2400" height="1534" fetchpriority="high" decoding="async" alt="Hot Spotter's Track Details view: a tracklist of 18 tinted waveforms on the left, and the focused track &quot;The Deli — Ocarina of Time Flip&quot; with its loudness-tinted waveform, LUFS stats and a spot note on the right."></a>
       </figure>
     </section>
   </div>
@@ -157,17 +238,17 @@
         <li>
           <span class="num" aria-hidden="true">01</span>
           <h3>Drop your mixes or masters.</h3>
-          <p>Drag the album folder onto Hot Spotter. It analyzes&nbsp; WAV, AIFF, FLAC and MP3s with an industry standard  engine (Integrated LUFS, EBU R 128) all on your machine. No cloud, fully functional offline.&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</p>
+          <p>Drag the album folder onto Hot Spotter. It analyzes WAV, AIFF, FLAC and MP3s with an industry-standard engine (integrated LUFS, EBU R 128), all on your machine. No cloud, fully functional offline.</p>
         </li>
         <li>
           <span class="num" aria-hidden="true">02</span>
           <h3>Read the room.</h3>
-          <p>Every track is measured against your album's own average, or a preset target. Full tracks or small sections that drift louder or quieter get flagged for your review.</p>
+          <p>Every track is measured against your album's own average, or a reference or target you set. Tracks that drift louder or quieter get flagged for your review, and the tinted waveform shows exactly which sections do it.</p>
         </li>
         <li>
           <span class="num" aria-hidden="true">03</span>
-          <h3>Fix  mistakes, lock in intention.</h3>
-          <p>Bounce a new master or confirm a track is how you like it, then re-run the analysis.&nbsp;Every change is tracked with a change-log, so you can watch your album's levels take shape.&nbsp;</p>
+          <h3>Fix mistakes, lock in intention.</h3>
+          <p>Bounce a new master or confirm a track is how you like it, then hit Analyze Again. Every change is tracked in History, so you can watch your album's levels take shape.</p>
         </li>
       </ol>
     </div>
@@ -176,8 +257,8 @@
   <section id="features" class="sec sec-features" aria-labelledby="features-h">
     <div class="wrap">
       <div class="sec-head">
-        <p class="eyebrow">WHAT IT IS&nbsp;</p>
-        <h2 id="features-h">More than a LUFS meter: your  album, or entire discography.</h2>
+        <p class="eyebrow">WHAT IT IS</p>
+        <h2 id="features-h">More than a LUFS meter: your album, or your entire discography.</h2>
       </div>
 
       <div class="rows">
@@ -185,54 +266,54 @@
         <article class="row row-wide row-ml">
           <figure class="frame media">
             <div class="chrome" aria-hidden="true"><span></span><span></span><span></span></div>
-            <a class="zoom" href="img/app-album-overview.webp" target="_blank" rel="noopener" aria-label="Open full-size screenshot"><img src="img/app-album-overview.webp" width="2400" height="1534" loading="lazy" decoding="async" alt="Album Overview: a loudness bar graph of 18 tracks around the album average of −12.4 LUFS, with a pin report table below."></a>
-            <figcaption class="micro">18 tracks of scanned and compared in a single sortable view</figcaption>
+            <a class="zoom" href="img/app-album-overview.webp" target="_blank" rel="noopener" aria-label="Open full-size screenshot: Overview"><img src="img/app-album-overview.webp" srcset="img/app-album-overview-1200.webp 1200w, img/app-album-overview.webp 2400w" sizes="(max-width: 900px) calc(100vw - 2.5rem), min(52vw, 600px)" width="2400" height="1534" loading="lazy" decoding="async" alt="Overview: a loudness bar graph of 18 tracks around the album average of −12.4 LUFS, with the Spot Report table below."></a>
+            <figcaption class="micro">18 tracks scanned and compared in a single sortable view.</figcaption>
           </figure>
           <div class="row-text">
             <p class="kicker">OVERVIEW</p>
             <h3>Every track's loudness against your album's average</h3>
-            <p>Load up the  Overview for one graph of the whole record.&nbsp;Each track's loudness as a bar around the album's averag , flagging on the ones that leave the pack. Leave nots for your mixes and see them at a glance in the Spot Report underneath.</p>
+            <p>Load up the Overview for one graph of the whole record. Each track's loudness shows as a bar around the album's average, flagging the ones that leave the pack. Leave notes for your mixes and see them at a glance in the Spot Report underneath.</p>
           </div>
         </article>
 
         <article class="row row-mr">
           <figure class="frame media">
             <div class="chrome" aria-hidden="true"><span></span><span></span><span></span></div>
-            <a class="zoom" href="img/crop-contour.webp" target="_blank" rel="noopener" aria-label="Open full-size screenshot"><img src="img/crop-contour.webp" width="1860" height="720" loading="lazy" decoding="async" alt="A loudness-tinted waveform of G Mills — Buzz with a white short-term-loudness contour line, stats row above and two pinned notes below."></a>
-            <figcaption class="micro">G Mills — "Buzz": contour line over the tint, two pinned notes below.</figcaption>
+            <a class="zoom" href="img/crop-contour.webp" target="_blank" rel="noopener" aria-label="Open full-size screenshot: waveform and contour"><img src="img/crop-contour.webp" srcset="img/crop-contour-930.webp 930w, img/crop-contour.webp 1860w" sizes="(max-width: 900px) calc(100vw - 2.5rem), min(45vw, 510px)" width="1860" height="720" loading="lazy" decoding="async" alt="A loudness-tinted waveform of G Mills — Buzz with a white short-term-loudness contour line, stats row above and two spot notes below."></a>
+            <figcaption class="micro">G Mills — "Buzz": contour line over the tint, two spot notes below.</figcaption>
           </figure>
           <div class="row-text">
             <p class="kicker">TINTED WAVEFORM &amp; CONTOUR</p>
-            <h3>DJ style waveforms show loudness and peaks visually, making finding hot spots a breeze.</h3>
-            <p>Short-term loudness is color-coded  on the waveform. Green while a track sits with the album, amber to red where it gets loud, blue where it dips quiet. Toggable contour with&nbsp;a hover feature for details.&nbsp;</p>
-            <p>Leave mix notes right on the waveform with timestamps using the "Spots" feature. Export your notes for an engineer or take them into your DAW.</p>
+            <h3>DJ-style waveforms show loudness and peaks visually, making finding hot spots a breeze.</h3>
+            <p>Short-term loudness is color-coded on the waveform. Green while a track sits with the album, amber to red where it gets loud, blue where it dips quiet. Toggleable contour with a hover feature for details.</p>
+            <p>Leave mix notes right on the waveform with timestamps using the "Spots" feature. Export your notes for an engineer, or copy the timestamped list to work through in your DAW.</p>
           </div>
         </article>
 
         <article class="row row-ml">
           <figure class="frame media">
             <div class="chrome" aria-hidden="true"><span></span><span></span><span></span></div>
-            <a class="zoom" href="img/crop-pins.webp" target="_blank" rel="noopener" aria-label="Open full-size screenshot"><img src="img/crop-pins.webp" width="1600" height="760" loading="lazy" decoding="async" alt="The Spot Report view: tinted waveform strips for three tracks with timestamped notes, one checked off with a strikethrough."></a>
-            <figcaption class="micro">A seamless way to provide mix feedback for yourself and collborators while listening back to the mixes.&nbsp; &nbsp; &nbsp;&nbsp;</figcaption>
+            <a class="zoom" href="img/crop-pins.webp" target="_blank" rel="noopener" aria-label="Open full-size screenshot: Spot Report"><img src="img/crop-pins.webp" srcset="img/crop-pins-800.webp 800w, img/crop-pins.webp 1600w" sizes="(max-width: 900px) calc(100vw - 2.5rem), min(45vw, 510px)" width="1600" height="760" loading="lazy" decoding="async" alt="The Spot Report view: tinted waveform strips for three tracks with timestamped notes, one checked off with a strikethrough."></a>
+            <figcaption class="micro">A seamless way to provide mix feedback for yourself and collaborators while listening back to the mixes.</figcaption>
           </figure>
           <div class="row-text">
             <p class="kicker">SPOT REPORT</p>
-            <h3>Precise note-taking for mixes &amp; Feedback</h3>
-            <p>Hear something? Tap the "P" to drop a pin into the Spot Report. Leave notes that automatically include the timestamp for quick and easy mix refinement.</p>
-            <p>Re-scan, double check, and knock them off your list. And if you're collabing, you can quickly export the Spot Report to a file, or even your clipboard to paste into a chat app like iMessage or Discard.&nbsp;</p>
+            <h3>Precise note-taking for mixes &amp; feedback</h3>
+            <p>Hear something? Tap "P" to mark a spot in the Spot Report. Leave notes that automatically include the timestamp for quick and easy mix refinement.</p>
+            <p>Analyze again, double-check, and knock them off your list. And if you're collabing, you can quickly export the Spot Report to a file, or even to your clipboard, to paste into a chat app like iMessage or Discord.</p>
           </div>
         </article>
 
         <article class="row row-mr">
           <figure class="frame media">
             <div class="chrome" aria-hidden="true"><span></span><span></span><span></span></div>
-            <a class="zoom" href="img/crop-tonal.webp" target="_blank" rel="noopener" aria-label="Open full-size screenshot"><img src="img/crop-tonal.webp" width="1860" height="760" loading="lazy" decoding="async" alt="A spectrum curve overlaid on the album's typical range band, with per-band deviation chips from sub to high."></a>
+            <a class="zoom" href="img/crop-tonal.webp" target="_blank" rel="noopener" aria-label="Open full-size screenshot: tonal balance"><img src="img/crop-tonal.webp" srcset="img/crop-tonal-930.webp 930w, img/crop-tonal.webp 1860w" sizes="(max-width: 900px) calc(100vw - 2.5rem), min(45vw, 510px)" width="1860" height="760" loading="lazy" decoding="async" alt="A spectrum curve overlaid on the album's typical range band, with per-band deviation chips from sub to high."></a>
             <figcaption class="micro">Tonal balance — one track's spectrum against the album's band.</figcaption>
           </figure>
           <div class="row-text">
             <p class="kicker">VIEW YOUR AUDIO SPECTRUM</p>
-            <h3>Keep your tracks balanced with a color-coded spectrum analyzer&nbsp; &nbsp;&nbsp;</h3>
-            <p>Every track features a spectrum against the album's own spread — sub, bass, low-mids, high-mids and highs each get a verdict in dB. No more guessing between "boomy" or "muddy", everything in view.&nbsp;</p>
+            <h3>Keep your tracks balanced with a color-coded spectrum analyzer</h3>
+            <p>Every track features a spectrum against the album's own spread — sub, bass, low-mids, high-mids and highs each get a verdict in dB. No more guessing between "boomy" and "muddy", everything in view.</p>
           </div>
         </article>
 
@@ -273,25 +354,24 @@
   <section id="philosophy" class="sec sec-philosophy" aria-labelledby="philosophy-h">
     <div class="wrap">
       <div class="sec-head narrow">
-		  
         <p class="eyebrow">NO PRESET POLICE</p>
-        <h2 id="philosophy-h">A loudness meter for producers, indie musicians, and DJs.&nbsp;</h2>
+        <h2 id="philosophy-h">A loudness meter for producers, indie musicians, and DJs.</h2>
       </div>
-		
+
       <figure class="frame media philo-shot">
         <div class="chrome" aria-hidden="true"><span></span><span></span><span></span></div>
-        <a class="zoom" href="img/slider-demo.png" target="_blank" rel="noopener" aria-label="Open full-size screenshot"><img src="img/slider-demo.png" width="817" height="298" loading="lazy" decoding="async" alt="The reference menu: Album average at −13.8 LUFS, Reference (load a track), or Manual (type a target), with the leniency slider beside it."></a>
-        <figcaption class="micro">Pick your reference: the album itself, a track you love, or platform's recommendation like Spotify's -14.0.</figcaption>
+        <a class="zoom" href="img/slider-demo.png" target="_blank" rel="noopener" aria-label="Open full-size screenshot: Average menu"><img src="img/slider-demo.png" width="817" height="298" loading="lazy" decoding="async" alt="The Average menu: Album average at −13.8 LUFS, Reference (load a track), or Manual (type a target), with the leniency slider beside it."></a>
+        <figcaption class="micro">Pick your reference: the album itself, a track you love, or a platform's recommendation like Spotify's −14 LUFS.</figcaption>
       </figure>
-      <p class="creed">Hot Spotter doesn't grade you against a streaming target or a broadcast spec. Load a reference of your favorite song or album, input a manual target you think sounds better, or make all your tracks your own.&nbsp;</p>
-      <p class="creed">By default, Hot Spotter's reference is the record you're making: every measurement is a distance from your album's own average. Adjust the slider from left to right to get your tracks tighter or more dynamic. You decide between intentional dynamics or slamming consistency.&nbsp;&nbsp;</p>
-      <p class="creed">For those who'd rather chase a tried and true reference, you can manually input one of your own, or load a reference file or album to get a picture of what your peers and idols are doing.</p>
-<p class="micro trust">
+      <p class="creed">Hot Spotter doesn't grade you against a streaming target or a broadcast spec. Load a reference of your favorite song or album, type in a target you think sounds better, or make all your tracks your own.</p>
+      <p class="creed">By default, Hot Spotter's reference is the record you're making: every loudness reading is a distance from your album's own average. Drag the slider toward strict to get your tracks tighter, or toward relaxed to keep them more dynamic. You decide between intentional dynamics and slamming consistency.</p>
+      <p class="creed">For those who'd rather chase a tried-and-true reference, you can manually input one of your own, or load a reference file or album to get a picture of what your peers and idols are doing.</p>
+      <p class="micro trust">
         <span>No uploads, no account — analysis runs locally</span>
         <span aria-hidden="true">·</span>
-        <span>Native Rust engine (EBU R128 / ITU-R BS.1770)</span>
+        <span>Native Rust engine (EBU R 128 / ITU-R BS.1770)</span>
         <span aria-hidden="true">·</span>
-        <span>Reports save as standalone HTML or Plain Text</span>
+        <span>Reports save as standalone HTML or plain text</span>
       </p>
     </div>
   </section>
@@ -299,43 +379,48 @@
   <section id="faq" class="sec sec-faq" aria-labelledby="faq-h">
     <div class="wrap faq-grid">
       <div class="sec-head faq-head">
-        <p class="eyebrow">QUESTIONS &amp; ANSWERS&nbsp;</p>
-        <h2 id="faq-h">Created by a DJ &amp; Producer to streamline music production workflows&nbsp; &nbsp;</h2>
+        <p class="eyebrow">QUESTIONS &amp; ANSWERS</p>
+        <h2 id="faq-h">Created by a DJ &amp; producer to streamline music production workflows.</h2>
       </div>
       <div class="faq-list">
         <details>
           <summary><span>What does Hot Spotter measure?</span></summary>
-          <p>Per track: integrated LUFS, true peak (dBTP), loudness range (LRA), max short-term loudness, dynamics (PSR), and a five-band tonal balance (sub, bass, low-mid, high-mid, high). Each value scanned is&nbsp; shown against the album's own average.<br>
-Per album: mean loudness, dynamics spread, and a full change history between runs.</p>
+          <p>Per track: integrated LUFS, true peak (dBTP), loudness range (LRA), short-term loudness over time, dynamics (PSR), and a five-band tonal balance (sub, bass, low-mid, high-mid, high). Loudness and tonal balance are shown against the album's own average.</p>
+          <p>Per album: mean loudness, loudness spread, and a full change history between runs.</p>
         </details>
         <details>
           <summary><span>Do my tracks need to hit −14 LUFS?</span></summary>
-          <p>Good gravy,  they don't!&nbsp;</p>
-          <p>−14 LUFS&nbsp; is a playback normalization number, not a mastering order. Hot Spotter shows you&nbsp; whether your album is consistent with itself. Does track five jump out bounds? Is that intro too quiet and will get people to skip?&nbsp;</p>
-          <p>If you do want a fixed number, click the album average and type one; it becomes your target. Or load up your favorite album or track and use it as a reference.&nbsp; </p>
+          <p>Good gravy, they don't!</p>
+          <p>−14 LUFS is a playback normalization number, not a mastering order. Hot Spotter shows you whether your album is consistent with itself. Does track five jump out of bounds? Is that intro too quiet, and will it get people to skip?</p>
+          <p>If you do want a fixed number, click the album average and type one; it becomes your target. Or load up your favorite album or track and use it as a reference.</p>
         </details>
         <details>
           <summary><span>What formats does Hot Spotter analyze?</span></summary>
-          <p>WAV, AIFF, FLAC and MP3. Mixed-format albums get a warning banner and per-track format chips, as lossy formats like MP3 can meter louder than lossless formats like WAV.&nbsp;</p>
-          <p>If you have MP3s alongside of lossless versions, no worries, a WAV+MP3 pair of the same song is detected and shown as one track.</p>
+          <p>WAV, AIFF, FLAC and MP3. If a folder mixes MP3s with lossless files, Hot Spotter asks which formats to analyze, as lossy formats like MP3 can meter louder than lossless formats like WAV.</p>
+          <p>If you have MP3s alongside lossless versions, no worries: a WAV+MP3 pair of the same song is detected and shown as one track.</p>
         </details>
         <details>
-          <summary><span>Is my audio uploaded anywhere? (are you scrapin' my data??) </span></summary>
-          <p>Absolutely not! Hot Spotter is a native desktop app, analysis runs on your machine, and the app makes no network requests except checking for updates. License keys are checked once and the app never phones home.</p>
+          <summary><span>Is my audio uploaded anywhere? (Are you scrapin' my data??)</span></summary>
+          <p>Absolutely not! Hot Spotter is a native desktop app, analysis runs on your machine, and the app makes no network requests except checking for updates and activating or deactivating your license key.</p>
         </details>
         <details>
           <summary><span>Mac or Windows?</span></summary>
-          <p>Both. macOS 13 Ventura or later (Apple Silicon and Intel), and Windows 10 or 11 (64-bit). Same app, same engine, one download page.</p>
+          <p>Both. macOS 13 Ventura or later (Apple Silicon and Intel), and Windows 10 or 11 (64-bit, beta). Same app, same engine, one download page.</p>
         </details>
         <details>
           <summary><span>What about pricing? How much does Hot Spotter cost?</span></summary>
-          <p>You can scan 20 tracks for free — no account, no time limit. After that, I ask $20 to help support development.&nbsp;</p>
+          <p>You can scan 20 tracks for free — no account, no time limit. After that, I ask $20 to help support development.</p>
           <p>No subscription, no locked features, no DLC. Buy Hot Spotter once and own it for life, future updates included. One key covers three computers, and there's a 14-day refund if it isn't for you. Something missing? <a href="mailto:support@hotspotter.studio">Tell us</a>.</p>
+        </details>
+        <details id="free-tracks">
+          <summary><span>How does the free version count tracks?</span></summary>
+          <p>The free version analyzes 20 tracks. A track is a file name inside an album folder, counted once: re-exporting a master to the same file name is free, renaming it or moving the folder counts as new, and a WAV+MP3 pair of the same song counts once.</p>
+          <p>References never count, and neither do failed or cancelled runs. Your reports and history stay readable after the 20 are used.</p>
         </details>
         <details>
           <summary><span>Who made this?</span></summary>
-          <p>I'm Chris, also known as Dj Cutman, DJ and producer running my own label. I built Hot Spotter to help me get more consistent playback on stream services, and as my friends found out about the project they asked me to develop it into an app. </p>
-          <p>Found a bug, or have a feature request? Accidentally scan the wrong folder and used up all your demo scans?&nbsp; Send me an email  <a href="mailto:support@hotspotter.studio">here</a> or DM  on Instagram <a href="http://instagram.com/videogamedj">@VideoGameDJ</a>.</p>
+          <p>I'm Chris, also known as DJ Cutman, a DJ and producer running my own label. I built Hot Spotter to help me get more consistent playback on streaming services, and as my friends found out about the project, they asked me to develop it into an app.</p>
+          <p>Found a bug, or have a feature request? Accidentally scanned the wrong folder and used up all your free tracks? Send me an <a href="mailto:support@hotspotter.studio">email</a> or DM me on Instagram <a href="https://www.instagram.com/videogamedj/">@VideoGameDJ</a>.</p>
         </details>
       </div>
     </div>
@@ -345,13 +430,13 @@ Per album: mean loudness, dynamics spread, and a full change history between run
     <div class="wrap">
       <p class="eyebrow">DOWNLOAD HOT SPOTTER</p>
       <h2 id="download-h">Get your album into full view.</h2>
-      <p class="dl-line">Download now and scan 20 tracks for free, then $20 once. No subscription, no add ons, no DLC. macOS 13 Ventura or later (Apple Silicon and Intel) and Windows 10 or 11.</p>
+      <p class="dl-line">Download now and scan 20 tracks for free, then $20 once. No subscription, no add-ons, no DLC. macOS 13 Ventura or later (Apple Silicon and Intel) and Windows 10 or 11 (beta).</p>
       <p class="cta-row">
         <a class="btn" href="download.html">Download</a>
         <a class="ghost micro" href="https://github.com/soundovision/hotspotter/releases" rel="noopener">Release notes →</a>
         <a class="ghost micro" href="mailto:support@hotspotter.studio">Send feedback →</a>
       </p>
-      <p class="micro fine">Signed and notarized. Updates arrive in-app.</p>
+      <p class="micro fine">The Mac app is signed and notarized and updates itself. On Windows, come back here for new versions.</p>
     </div>
   </section>
 
@@ -376,6 +461,16 @@ Per album: mean loudness, dynamics spread, and a full change history between run
 
 <script defer src="analytics.js"></script>
 <script>
+// A link to a FAQ entry (e.g. #free-tracks) opens that answer.
+(function () {
+  function openHash() {
+    var el = location.hash.length > 1 && document.getElementById(location.hash.slice(1));
+    if (el && el.tagName === "DETAILS") el.open = true;
+  }
+  openHash();
+  window.addEventListener("hashchange", openHash);
+})();
+
 // "Make it yours": the palette strip. palRamp is copied verbatim from
 // ui/report.js so the site tints exactly like the app.
 (function () {
