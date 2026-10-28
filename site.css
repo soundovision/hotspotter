@@ -122,6 +122,18 @@ a { color: var(--acc); }
 
 .fine { color: var(--faint); }
 
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
 /* --- Layout --------------------------------------------------------------- */
 .wrap {
   max-width: var(--wrap);
@@ -130,7 +142,7 @@ a { color: var(--acc); }
 }
 
 .sec { padding-block: clamp(3rem, 6vw, 5rem); }
-section[id], #main { scroll-margin-top: calc(var(--head-h) + 1rem); }
+section[id], details[id], #main, .legal h2[id] { scroll-margin-top: calc(var(--head-h) + 1rem); }
 
 /* --- Skip link ------------------------------------------------------------ */
 .skip-link {
@@ -336,6 +348,7 @@ section[id], #main { scroll-margin-top: calc(var(--head-h) + 1rem); }
 .sec-head { margin-bottom: clamp(2.25rem, 4.5vw, 3.5rem); }
 .sec-head .eyebrow + h2 { margin-top: 1rem; }
 .sec-head.narrow h2 { max-width: 26ch; }
+.sec-head h2 + .lede { margin-top: 1.25rem; }
 
 /* --- How it works ---------------------------------------------------------- */
 .sec-how { padding-block: clamp(3.5rem, 6.5vw, 5.5rem) clamp(2rem, 4vw, 3.25rem); }
@@ -383,7 +396,12 @@ section[id], #main { scroll-margin-top: calc(var(--head-h) + 1rem); }
 .row-mr > .row-text { grid-column: 1 / 6; }
 
 .row-text .kicker + h3 { margin-top: .875rem; }
-.row-text h3 + p { margin-top: .875rem; }
+.row-text h3 + p,
+.row-text p + p { margin-top: .875rem; }
+/* a row with no screenshot: two text columns */
+.row-split { align-items: start; }
+.row-split > .row-text:first-child { grid-column: 1 / 7; }
+.row-split > .row-text:last-child  { grid-column: 7 / 13; }
 
 /* --- Palettes (Make it yours) ---------------------------------------------- */
 .sec-palettes {
@@ -462,27 +480,49 @@ section[id], #main { scroll-margin-top: calc(var(--head-h) + 1rem); }
   .pal-stage { transition: none; }
 }
 
-/* --- Philosophy ------------------------------------------------------------ */
-.sec-philosophy { border-top: 1px solid var(--line); }
-.philo-shot {
-  float: right;
-  width: min(40%, 26rem);
-  margin: 0 0 1.5rem clamp(1.5rem, 4vw, 3rem);
+/* --- Pricing --------------------------------------------------------------- */
+.sec-pricing { border-top: 1px solid var(--line); }
+.tiers {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(1rem, 2.5vw, 1.75rem);
 }
-.sec-philosophy .trust { clear: both; }
-.creed {
-  max-width: 60ch;
-  font-size: clamp(1.05rem, 1.35vw, 1.15rem);
-  line-height: 1.7;
+.tier {
+  padding: clamp(1.5rem, 3vw, 2rem);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--panel);
+  transition: border-color .2s, background .2s, transform .25s var(--ease), box-shadow .25s var(--ease);
 }
-.trust {
-  display: flex;
-  flex-wrap: wrap;
-  gap: .35rem 1rem;
-  margin-top: clamp(2.5rem, 5vw, 3.75rem);
-  padding-top: 1.25rem;
+.tier-pick { border-color: var(--acc); }
+.tier:hover {
+  border-color: var(--divider);
+  background: var(--pop);
+  transform: translateY(-4px);
+  box-shadow: 0 14px 32px -18px rgba(0,0,0,.7);
+}
+.tier-pick:hover { border-color: var(--acc); }
+.tier-price {
+  margin-top: .75rem;
+  color: var(--fg);
+  font-size: clamp(2rem, 3.4vw, 2.6rem);
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: -.02em;
+}
+.tier-price span { font-size: 1rem; font-weight: 400; letter-spacing: 0; color: var(--fg2); }
+.tier ul {
+  list-style: none;
+  margin: 1.5rem 0 0;
+  padding: 0;
   border-top: 1px solid var(--line);
-  color: var(--faint);
+}
+.tier li { padding: .6rem 0; border-bottom: 1px solid var(--line); }
+.tier-note { margin-top: 1.5rem; text-align: center; }
+.tier-note + .tier-note { margin-top: .25rem; }
+@media (prefers-reduced-motion: reduce) {
+  .tier { transition: none; }
+  .tier:hover { transform: none; }
 }
 
 /* --- FAQ ------------------------------------------------------------------- */
@@ -533,14 +573,15 @@ section[id], #main { scroll-margin-top: calc(var(--head-h) + 1rem); }
   border-bottom: 1px solid var(--line);
   padding-block: clamp(4.5rem, 9vw, 7.5rem);
 }
+.sec-download { text-align: center; }
 .sec-download .eyebrow + h2 { margin-top: 1rem; }
 .dl-line {
   max-width: 54ch;
-  margin-top: 1.25rem;
+  margin: 1.25rem auto 0;
   font-size: clamp(1rem, 1.2vw, 1.0625rem);
 }
-.sec-download .cta-row { margin-top: 2.25rem; }
-.sec-download .fine { margin-top: 2rem; max-width: 72ch; }
+.sec-download .cta-row { margin-top: 2.25rem; justify-content: center; }
+.sec-download .fine { margin: 2rem auto 0; max-width: 72ch; }
 
 /* --- Footer ---------------------------------------------------------------- */
 .site-foot { padding-block: clamp(2rem, 4vw, 3rem); }
@@ -599,16 +640,15 @@ section[id], #main { scroll-margin-top: calc(var(--head-h) + 1rem); }
   .row-ml > .media,
   .row-ml > .row-text,
   .row-mr > .media,
-  .row-mr > .row-text { grid-column: 1 / -1; }
+  .row-mr > .row-text,
+  .row-split > .row-text:first-child,
+  .row-split > .row-text:last-child { grid-column: 1 / -1; }
   .row > .row-text { margin-top: 1.75rem; }
+  .row-split > .row-text:first-child { margin-top: 0; }
 
-  .philo-shot {
-    float: none;
-    width: 100%;
-    max-width: 30rem;
-    margin: 0 0 2rem;
-  }
   .row + .row { margin-top: clamp(3.5rem, 9vw, 5rem); }
+
+  .tiers { grid-template-columns: 1fr; }
 
   .faq-grid { grid-template-columns: 1fr; }
   .faq-head { margin-bottom: clamp(1.75rem, 4vw, 2.5rem); }
@@ -620,7 +660,6 @@ section[id], #main { scroll-margin-top: calc(var(--head-h) + 1rem); }
   .head-nav .btn-sm { display: none; }
   .navlink { font-size: .75rem; white-space: nowrap; }
   .wordmark .ver { display: none; }
-  .trust > span[aria-hidden] { display: none; }
   .ribbon-legend {
     grid-template-columns: 1fr;
     gap: .1rem;

@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Hot Spotter — Album Loudness Meter for Producers (LUFS)</title>
-<meta name="description" content="An album loudness meter for producers: see every track's LUFS against your album's own average, plus true peak and dynamics. Scan 20 tracks free.">
+<title>Hot Spotter | Album Loudness Meter for Producers (LUFS)</title>
+<meta name="description" content="Don't give listeners a reason to skip. Hot Spotter is an album loudness meter for producers: spot the hot and cold parts of every track. Scan 20 tracks free.">
 <link rel="canonical" href="https://hotspotter.studio/">
 <meta name="theme-color" content="#12151d">
 <link rel="icon" href="/favicon.ico" sizes="32x32">
@@ -12,16 +12,16 @@
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Hot Spotter">
-<meta property="og:title" content="Hot Spotter — Album Loudness Meter">
-<meta property="og:description" content="An album LUFS meter for producers — read the whole record at a glance. Loudness-tinted waveforms show exactly where a track runs hot. Scan 20 tracks for free.">
+<meta property="og:title" content="Hot Spotter | Album Loudness Meter">
+<meta property="og:description" content="Don't give listeners a reason to skip. See loudness, dynamics and tone across your whole album, and spot the hot and cold parts of every track. Scan 20 tracks for free.">
 <meta property="og:url" content="https://hotspotter.studio/">
 <meta property="og:image" content="https://hotspotter.studio/img/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Hot Spotter app showing an album's loudness-tinted waveforms and per-track LUFS readings">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Hot Spotter — Album Loudness Meter">
-<meta name="twitter:description" content="Read the whole record at a glance. Loudness-tinted waveforms show exactly where a track runs hot. Scan 20 tracks for free.">
+<meta name="twitter:title" content="Hot Spotter | Album Loudness Meter">
+<meta name="twitter:description" content="Don't give listeners a reason to skip. Spot the hot and cold parts of every track on your album. Scan 20 tracks for free.">
 <link rel="preload" href="fonts/SpaceGrotesk-var.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="fonts/SpaceMono-Regular.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="site.css">
@@ -66,8 +66,8 @@
       "description": "An album loudness meter for producers and musicians. Drop in a folder of mixes or masters and see every track's integrated LUFS, true peak, loudness range and dynamics (PSR), with loudness and tonal balance measured against the album's own average. Loudness-tinted waveforms show where a track runs hot, and timestamped mix notes keep your fixes in one place.",
       "applicationCategory": "MultimediaApplication",
       "applicationSubCategory": "Album loudness meter",
-      "operatingSystem": "macOS 13 or later; Windows 10 or 11 (64-bit, beta)",
-      "softwareVersion": "0.75.0",
+      "operatingSystem": "macOS 13 or later",
+      "softwareVersion": "1.0.0",
       "downloadUrl": "https://hotspotter.studio/download.html",
       "releaseNotes": "https://github.com/soundovision/hotspotter/releases",
       "image": "https://hotspotter.studio/img/og-image.png",
@@ -82,15 +82,27 @@
         "Loudness-tinted waveforms with an optional short-term loudness contour",
         "Timestamped mix notes (Spots) collected in a Spot Report you can export or copy",
         "History of every change between scans",
-        "Runs on your computer: no uploads, no account"
+        "Trim long intros and outros out of the readings, then A/B the trimmed readings against the full tracks",
+        "Runs on your computer: no audio uploads, no account"
       ],
-      "offers": {
-        "@type": "Offer",
-        "price": "20",
-        "priceCurrency": "USD",
-        "url": "https://hotspotter.studio/download.html",
-        "description": "Scan 20 tracks for free, then $20 once. No subscription."
-      },
+      "offers": [
+        {
+          "@type": "Offer",
+          "name": "Hot Spotter 20-Track Pack",
+          "price": "5",
+          "priceCurrency": "USD",
+          "url": "https://hotspotter.studio/#pricing",
+          "description": "20 more tracks on the one computer that redeems it. Never expires. Buy as many as you like."
+        },
+        {
+          "@type": "Offer",
+          "name": "Hot Spotter Unlimited",
+          "price": "19",
+          "priceCurrency": "USD",
+          "url": "https://hotspotter.studio/#pricing",
+          "description": "Unlimited tracks on 2 computers, plus custom colors. Pay once, no subscription."
+        }
+      ],
       "author": {
         "@id": "https://hotspotter.studio/#djcutman"
       },
@@ -137,7 +149,7 @@
       "name": "Is my audio uploaded anywhere? (Are you scrapin' my data??)",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Absolutely not! Hot Spotter is a native desktop app, analysis runs on your machine, and the app makes no network requests except checking for updates and activating or deactivating your license key."
+        "text": "Absolutely not! Hot Spotter is a native desktop app, and analysis runs on your machine. The app only goes online to check for updates, to activate or deactivate your license key, and, if you turn them on, to send anonymous usage reports. Those never include your audio, file names or measurements. See exactly what's sent."
       }
     },
     {
@@ -145,7 +157,7 @@
       "name": "Mac or Windows?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Both. macOS 13 Ventura or later (Apple Silicon and Intel), and Windows 10 or 11 (64-bit, beta). Same app, same engine, one download page."
+        "text": "Mac for now: macOS 13 Ventura or later (Apple Silicon and Intel). Windows is coming soon."
       }
     },
     {
@@ -153,7 +165,7 @@
       "name": "What about pricing? How much does Hot Spotter cost?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "You can scan 20 tracks for free — no account, no time limit. After that, I ask $20 to help support development. No subscription, no locked features, no DLC. Buy Hot Spotter once and own it for life, future updates included. One key covers three computers, and there's a 14-day refund if it isn't for you. Something missing? Tell us."
+        "text": "You can scan 20 tracks for free on each computer, with no account and no time limit. When you need more, buy from inside the app: a 20-Track Pack adds 20 tracks for $5, and you can buy as many as you like. Or go Unlimited for $19 once to help support development. Unlimited covers two computers and adds custom colors. No subscription: everyone gets future updates for free, and both come with a 14-day refund if Hot Spotter isn't for you. Something missing? Tell us."
       }
     },
     {
@@ -161,7 +173,23 @@
       "name": "How does the free version count tracks?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "The free version analyzes 20 tracks. A track is a file name inside an album folder, counted once: re-exporting a master to the same file name is free, renaming it or moving the folder counts as new, and a WAV+MP3 pair of the same song counts once. References never count, and neither do failed or cancelled runs. Your reports and history stay readable after the 20 are used."
+        "text": "The free version analyzes 20 tracks on each computer. A track is a file name inside an album folder, counted once: re-exporting a master to the same file name is free, renaming it or moving the folder counts as new, and a WAV+MP3 pair of the same song counts once. References never count, and neither do failed or cancelled runs. Free tracks are used first, then pack tracks. Your reports and history stay readable after your tracks run out."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do pack tracks move to my other computer?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. A 20-Track Pack stays on the one computer that redeems it, and it can't be moved later. If you work on two computers, Unlimited covers both. Replacing a computer you use with Unlimited? Email me and I'll free up its spot."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Lost your key?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Your key is in the email Dodo Payments sent when you bought Hot Spotter, and in Dodo's customer portal. Still can't find it? Email me and I'll help."
       }
     },
     {
@@ -186,11 +214,11 @@
       <img src="img/app-icon.png" alt="" width="24" height="24" decoding="async">
       <span class="wordmark-name">Hot Spotter</span>
       <!-- version: the latest PUBLIC release (github.com/soundovision/hotspotter/releases), not the working tree; hand-synced with the schema.org softwareVersion above -->
-      <span class="ver">v0.75.0</span>
+      <span class="ver">v1.0.0</span>
     </a>
     <nav class="head-nav" aria-label="Primary">
-      <a class="navlink" href="#how">How it works</a>
       <a class="navlink" href="#features">Features</a>
+      <a class="navlink" href="#pricing">Pricing</a>
       <a class="navlink" href="#faq">FAQ</a>
       <a class="btn btn-sm" href="download.html">Download</a>
     </nav>
@@ -202,9 +230,9 @@
   <div class="hero-wrap">
     <section class="hero wrap" aria-labelledby="hero-h">
       <div class="hero-copy">
-        <p class="eyebrow rise rise-1">NAIL YOUR MUSIC'S LOUDNESS &amp; SPECTRUM</p>
-        <h1 id="hero-h" class="rise rise-2">Spot the heat before your listeners do.</h1>
-        <p class="lede rise rise-3">Drop a folder of masters and see the whole album on one screen. Loudness-tinted waveforms show exactly where a track runs hot — not just that it does.</p>
+        <p class="eyebrow rise rise-1">WELCOME TO HOT SPOTTER</p>
+        <h1 id="hero-h" class="rise rise-2">Don't give listeners a reason to skip.</h1>
+        <p class="lede rise rise-3">It's hard to stay objective about your music during mixing and mastering. Hot Spotter analyzes your music and presents easy-to-read graphs, interactive DJ-style waveforms, and acoustic data points that make it easy to spot both the hot and cold parts of your tracks.</p>
         <p class="cta-row rise rise-4">
           <a class="btn" href="download.html">Download</a>
           <a class="ghost" href="#features">See it read a real album ↓</a>
@@ -214,7 +242,7 @@
 
       <figure class="frame hero-shot rise rise-shot">
         <div class="chrome" aria-hidden="true"><span></span><span></span><span></span></div>
-        <a class="zoom" href="img/app-track-details.webp" target="_blank" rel="noopener" aria-label="Open full-size screenshot: Track Details"><img src="img/app-track-details.webp" srcset="img/app-track-details-1200.webp 1200w, img/app-track-details.webp 2400w" sizes="(max-width: 900px) calc(100vw - 2.5rem), 56vw" width="2400" height="1534" fetchpriority="high" decoding="async" alt="Hot Spotter's Track Details view: a tracklist of 18 tinted waveforms on the left, and the focused track &quot;The Deli — Ocarina of Time Flip&quot; with its loudness-tinted waveform, LUFS stats and a spot note on the right."></a>
+        <a class="zoom" href="img/app-track-details.webp" target="_blank" rel="noopener" aria-label="Open full-size screenshot: Track Details"><img src="img/app-track-details.webp" srcset="img/app-track-details-1200.webp 1200w, img/app-track-details.webp 2400w" sizes="(max-width: 900px) calc(100vw - 2.5rem), 56vw" width="2400" height="1560" fetchpriority="high" decoding="async" alt="Hot Spotter's Track Details view: a tracklist of 18 tinted waveforms on the left, and the focused track, &quot;Ocarina of Time Flip&quot; by The Deli, with its loudness-tinted waveform, LUFS stats and a spot note on the right."></a>
       </figure>
     </section>
   </div>
@@ -233,6 +261,7 @@
       <div class="sec-head">
         <p class="eyebrow">HOW IT WORKS</p>
         <h2 id="how-h">Scan your album, or your entire discography, in seconds.</h2>
+        <p class="lede">Hot Spotter was built by a producer and mastering engineer with over 2,000 credits. It's a standalone app designed to streamline the process of getting an objective view of loudness, dynamics, and tone for an album, mixtape, or full discography.</p>
       </div>
       <ol class="steps">
         <li>
@@ -256,41 +285,69 @@
 
   <section id="features" class="sec sec-features" aria-labelledby="features-h">
     <div class="wrap">
-      <div class="sec-head">
-        <p class="eyebrow">WHAT IT IS</p>
-        <h2 id="features-h">More than a LUFS meter: your album, or your entire discography.</h2>
-      </div>
+      <h2 id="features-h" class="visually-hidden">Features</h2>
 
       <div class="rows">
 
         <article class="row row-wide row-ml">
           <figure class="frame media">
             <div class="chrome" aria-hidden="true"><span></span><span></span><span></span></div>
-            <a class="zoom" href="img/app-album-overview.webp" target="_blank" rel="noopener" aria-label="Open full-size screenshot: Overview"><img src="img/app-album-overview.webp" srcset="img/app-album-overview-1200.webp 1200w, img/app-album-overview.webp 2400w" sizes="(max-width: 900px) calc(100vw - 2.5rem), min(52vw, 600px)" width="2400" height="1534" loading="lazy" decoding="async" alt="Overview: a loudness bar graph of 18 tracks around the album average of −12.4 LUFS, with the Spot Report table below."></a>
+            <a class="zoom" href="img/app-album-overview.webp" target="_blank" rel="noopener" aria-label="Open full-size screenshot: Overview"><img src="img/app-album-overview.webp" srcset="img/app-album-overview-1200.webp 1200w, img/app-album-overview.webp 2400w" sizes="(max-width: 900px) calc(100vw - 2.5rem), min(52vw, 600px)" width="2400" height="1560" loading="lazy" decoding="async" alt="Overview: a loudness bar graph of 18 tracks around the album average of −12.4 LUFS, each bar showing how far its track sits from the average."></a>
             <figcaption class="micro">18 tracks scanned and compared in a single sortable view.</figcaption>
           </figure>
           <div class="row-text">
             <p class="kicker">OVERVIEW</p>
-            <h3>Every track's loudness against your album's average</h3>
-            <p>Load up the Overview for one graph of the whole record. Each track's loudness shows as a bar around the album's average, flagging the ones that leave the pack. Leave notes for your mixes and see them at a glance in the Spot Report underneath.</p>
+            <h3>Loudness &amp; Tone</h3>
+            <p>Hot Spotter is a unique loudness meter that focuses on loudness and balance across as many tracks as you can throw at it. Perfect for albums, mixtapes, single series, an entire discography.</p>
+            <p>Traditional loudness meters focus on A/Bing, comparing two tracks to one another. Hot Spotter expands on this idea, allowing artists, producers, and engineers to create a consistent sound across a full collection of music.</p>
+          </div>
+        </article>
+
+        <article class="row row-split">
+          <div class="row-text">
+            <h3>Wait, but Why?</h3>
+            <p>Algorithms don't listen to your music, they watch user behavior. Is your song's mix or master turning off listeners?</p>
+            <p>In the era of streaming, passive listening, and playlists, having a consistent loudness and tone across an album or catalog is critical. Listeners skip tracks that are too quiet or too compressed, and streaming platforms' algorithms impose penalties.</p>
+          </div>
+          <div class="row-text">
+            <h3>Genre Advantage</h3>
+            <p>For artists that create lo-fi, ambient, acoustic, or classical music, having a consistent loudness and tone across your whole album can vastly increase the performance on streaming of your project.</p>
+            <p>For artists with dynamic genres, like jazz, EDM, and rock, you can now pinpoint which tracks should be your loudest and have the most energy, and ensure that they punch above their weight in the context of your album and against your references.</p>
           </div>
         </article>
 
         <article class="row row-mr">
           <figure class="frame media">
             <div class="chrome" aria-hidden="true"><span></span><span></span><span></span></div>
-            <a class="zoom" href="img/crop-contour.webp" target="_blank" rel="noopener" aria-label="Open full-size screenshot: waveform and contour"><img src="img/crop-contour.webp" srcset="img/crop-contour-930.webp 930w, img/crop-contour.webp 1860w" sizes="(max-width: 900px) calc(100vw - 2.5rem), min(45vw, 510px)" width="1860" height="720" loading="lazy" decoding="async" alt="A loudness-tinted waveform of G Mills — Buzz with a white short-term-loudness contour line, stats row above and two spot notes below."></a>
-            <figcaption class="micro">G Mills — "Buzz": contour line over the tint, two spot notes below.</figcaption>
+            <a class="zoom" href="img/crop-tonal.webp" target="_blank" rel="noopener" aria-label="Open full-size screenshot: tonal balance"><img src="img/crop-tonal.webp" srcset="img/crop-tonal-930.webp 930w, img/crop-tonal.webp 1860w" sizes="(max-width: 900px) calc(100vw - 2.5rem), min(45vw, 510px)" width="1860" height="770" loading="lazy" decoding="async" alt="A spectrum curve overlaid on the album's typical range band, with per-band deviation chips from sub to high."></a>
+            <figcaption class="micro">Tonal balance: one track's spectrum against the album's band.</figcaption>
           </figure>
           <div class="row-text">
-            <p class="kicker">TINTED WAVEFORM &amp; CONTOUR</p>
-            <h3>DJ-style waveforms show loudness and peaks visually, making finding hot spots a breeze.</h3>
-            <p>Short-term loudness is color-coded on the waveform. Green while a track sits with the album, amber to red where it gets loud, blue where it dips quiet. Toggleable contour with a hover feature for details.</p>
-            <p>Leave mix notes right on the waveform with timestamps using the "Spots" feature. Export your notes for an engineer, or copy the timestamped list to work through in your DAW.</p>
+            <p class="kicker">TONAL BALANCE</p>
+            <h3>Reference What Works</h3>
+            <p>Hot Spotter supports reference tracks, either an individual song or a whole folder. Load up your favorite track or an album that inspired you.</p>
+            <p>See bass levels, loudness (Integrated LUFS), dynamics, and even a visual EQ spectrum at a glance. Turn on or off as many data points as you like.</p>
+            <p>Working on an album? Catch tracks that might be too compressed or too quiet.</p>
+            <p>Creating a mixtape? Make sure every beat hits.</p>
+            <p>Releasing singles? Ensure each one can land on a playlist with your inspirations.</p>
           </div>
         </article>
 
         <article class="row row-ml">
+          <figure class="frame media">
+            <div class="chrome" aria-hidden="true"><span></span><span></span><span></span></div>
+            <a class="zoom" href="img/crop-trim.webp" target="_blank" rel="noopener" aria-label="Open full-size screenshot: Trim"><img src="img/crop-trim.webp" srcset="img/crop-trim-581.webp 581w, img/crop-trim.webp 1162w" sizes="(max-width: 900px) calc(100vw - 2.5rem), min(45vw, 510px)" width="1162" height="438" loading="lazy" decoding="async" alt="A track's waveform with white trim handles at 0:52 and near the end: the intro and outro outside them are grayed out, and the readings above (Gain +0.5, Loudness −14.8, Peak −1.1, Range 8.7, Bass +3.4, Sub −0.5) cover only the part between the handles."></a>
+            <figcaption class="micro">Trim: everything outside the handles is left out of the readings.</figcaption>
+          </figure>
+          <div class="row-text">
+            <p class="kicker">TRIM</p>
+            <h3>Trim the Fat</h3>
+            <p>In traditional metering apps, you'd have to edit, re-export, and re-analyze a track with a long intro or outro to get a clear loudness reading. Use the Trim feature in Hot Spotter to instantly adjust the readings to focus on the core of your song.</p>
+            <p>Use keyboard shortcuts to rapidly Trim as many tracks as you want across your album. Then A/B the trimmed versions against the full tracks to see things lock in.</p>
+          </div>
+        </article>
+
+        <article class="row row-mr">
           <figure class="frame media">
             <div class="chrome" aria-hidden="true"><span></span><span></span><span></span></div>
             <a class="zoom" href="img/crop-pins.webp" target="_blank" rel="noopener" aria-label="Open full-size screenshot: Spot Report"><img src="img/crop-pins.webp" srcset="img/crop-pins-800.webp 800w, img/crop-pins.webp 1600w" sizes="(max-width: 900px) calc(100vw - 2.5rem), min(45vw, 510px)" width="1600" height="760" loading="lazy" decoding="async" alt="The Spot Report view: tinted waveform strips for three tracks with timestamped notes, one checked off with a strikethrough."></a>
@@ -298,22 +355,23 @@
           </figure>
           <div class="row-text">
             <p class="kicker">SPOT REPORT</p>
-            <h3>Precise note-taking for mixes &amp; feedback</h3>
-            <p>Hear something? Tap "P" to mark a spot in the Spot Report. Leave notes that automatically include the timestamp for quick and easy mix refinement.</p>
-            <p>Analyze again, double-check, and knock them off your list. And if you're collabing, you can quickly export the Spot Report to a file, or even to your clipboard, to paste into a chat app like iMessage or Discord.</p>
+            <h3>Spots to Improve</h3>
+            <p>There's always more work to be done. Mark spots on your waveforms or in your frequency spectrum to make notes to help your songs be the best they can be.</p>
+            <p>Export a Spot Report in a beautiful interactive report, or keep it simple and copy paste into your favorite note or chat app.</p>
           </div>
         </article>
 
-        <article class="row row-mr">
+        <article class="row row-ml">
           <figure class="frame media">
             <div class="chrome" aria-hidden="true"><span></span><span></span><span></span></div>
-            <a class="zoom" href="img/crop-tonal.webp" target="_blank" rel="noopener" aria-label="Open full-size screenshot: tonal balance"><img src="img/crop-tonal.webp" srcset="img/crop-tonal-930.webp 930w, img/crop-tonal.webp 1860w" sizes="(max-width: 900px) calc(100vw - 2.5rem), min(45vw, 510px)" width="1860" height="760" loading="lazy" decoding="async" alt="A spectrum curve overlaid on the album's typical range band, with per-band deviation chips from sub to high."></a>
-            <figcaption class="micro">Tonal balance — one track's spectrum against the album's band.</figcaption>
+            <a class="zoom" href="img/crop-contour.webp" target="_blank" rel="noopener" aria-label="Open full-size screenshot: waveform and contour"><img src="img/crop-contour.webp" srcset="img/crop-contour-930.webp 930w, img/crop-contour.webp 1860w" sizes="(max-width: 900px) calc(100vw - 2.5rem), min(45vw, 510px)" width="1860" height="758" loading="lazy" decoding="async" alt="A loudness-tinted waveform of &quot;Buzz&quot; by G Mills with a white short-term-loudness contour line, stats row above and two spot notes below."></a>
+            <figcaption class="micro">G Mills, "Buzz": contour line over the tint, two spot notes below.</figcaption>
           </figure>
           <div class="row-text">
-            <p class="kicker">VIEW YOUR AUDIO SPECTRUM</p>
-            <h3>Keep your tracks balanced with a color-coded spectrum analyzer</h3>
-            <p>Every track features a spectrum against the album's own spread — sub, bass, low-mids, high-mids and highs each get a verdict in dB. No more guessing between "boomy" and "muddy", everything in view.</p>
+            <p class="kicker">TRACK DETAILS</p>
+            <h3>Listen Back</h3>
+            <p>Utilize the integrated audio player to review your mixes while making notes. Use your trim markers to review all your drops, or sort and reorder the tracklist to lock down the best sequence.</p>
+            <p>No more waiting for release day to see if the masters sound good on Spotify.</p>
           </div>
         </article>
 
@@ -347,32 +405,48 @@
           <button type="button" class="pal-chip" data-theme="light" aria-pressed="false">Light</button>
         </div>
       </div>
-      <p class="micro fine pal-note">Every waveform, graph and chip in the app follows the palette you pick. Thermal is the default.</p>
+      <p class="micro fine pal-note">Every waveform, graph and chip in the app follows the palette you pick. Thermal is the default, and Unlimited adds a custom palette in your own colors.</p>
     </div>
   </section>
 
-  <section id="philosophy" class="sec sec-philosophy" aria-labelledby="philosophy-h">
+  <section id="pricing" class="sec sec-pricing" aria-labelledby="pricing-h">
     <div class="wrap">
-      <div class="sec-head narrow">
-        <p class="eyebrow">NO PRESET POLICE</p>
-        <h2 id="philosophy-h">A loudness meter for producers, indie musicians, and DJs.</h2>
+      <div class="sec-head">
+        <p class="eyebrow">PRICING</p>
+        <h2 id="pricing-h">Start free. No subscription.</h2>
       </div>
-
-      <figure class="frame media philo-shot">
-        <div class="chrome" aria-hidden="true"><span></span><span></span><span></span></div>
-        <a class="zoom" href="img/slider-demo.png" target="_blank" rel="noopener" aria-label="Open full-size screenshot: Average menu"><img src="img/slider-demo.png" width="817" height="298" loading="lazy" decoding="async" alt="The Average menu: Album average at −13.8 LUFS, Reference (load a track), or Manual (type a target), with the leniency slider beside it."></a>
-        <figcaption class="micro">Pick your reference: the album itself, a track you love, or a platform's recommendation like Spotify's −14 LUFS.</figcaption>
-      </figure>
-      <p class="creed">Hot Spotter doesn't grade you against a streaming target or a broadcast spec. Load a reference of your favorite song or album, type in a target you think sounds better, or make all your tracks your own.</p>
-      <p class="creed">By default, Hot Spotter's reference is the record you're making: every loudness reading is a distance from your album's own average. Drag the slider toward strict to get your tracks tighter, or toward relaxed to keep them more dynamic. You decide between intentional dynamics and slamming consistency.</p>
-      <p class="creed">For those who'd rather chase a tried-and-true reference, you can manually input one of your own, or load a reference file or album to get a picture of what your peers and idols are doing.</p>
-      <p class="micro trust">
-        <span>No uploads, no account — analysis runs locally</span>
-        <span aria-hidden="true">·</span>
-        <span>Native Rust engine (EBU R 128 / ITU-R BS.1770)</span>
-        <span aria-hidden="true">·</span>
-        <span>Reports save as standalone HTML or plain text</span>
-      </p>
+      <div class="tiers">
+        <article class="tier">
+          <h3>Free</h3>
+          <p class="tier-price">$0</p>
+          <ul>
+            <li>20 tracks per computer</li>
+            <li>Every feature except custom colors</li>
+            <li>No account, no time limit</li>
+          </ul>
+        </article>
+        <article class="tier">
+          <h3>20-Track Pack</h3>
+          <p class="tier-price">$5</p>
+          <ul>
+            <li>20 more tracks</li>
+            <li>Buy as many as you like</li>
+            <li>Stays on the one computer that redeems it</li>
+            <li>Never expires</li>
+          </ul>
+        </article>
+        <article class="tier tier-pick">
+          <h3>Unlimited</h3>
+          <p class="tier-price">$19 <span>once</span></p>
+          <ul>
+            <li>Unlimited tracks</li>
+            <li>2 computers</li>
+            <li>Custom colors</li>
+          </ul>
+        </article>
+      </div>
+      <p class="micro fine tier-note">Free updates for everyone · 14-day refund on both · Buy from inside the app when you're ready</p>
+      <p class="micro fine tier-note">Prices in US dollars. Checkout shows your local currency and adds tax where it applies.</p>
     </div>
   </section>
 
@@ -401,21 +475,30 @@
         </details>
         <details>
           <summary><span>Is my audio uploaded anywhere? (Are you scrapin' my data??)</span></summary>
-          <p>Absolutely not! Hot Spotter is a native desktop app, analysis runs on your machine, and the app makes no network requests except checking for updates and activating or deactivating your license key.</p>
+          <p>Absolutely not! Hot Spotter is a native desktop app, and analysis runs on your machine. The app only goes online to check for updates, to activate or deactivate your license key, and, if you turn them on, to send anonymous usage reports. Those never include your audio, file names or measurements. <a href="privacy.html#usage">See exactly what's sent</a>.</p>
         </details>
         <details>
           <summary><span>Mac or Windows?</span></summary>
-          <p>Both. macOS 13 Ventura or later (Apple Silicon and Intel), and Windows 10 or 11 (64-bit, beta). Same app, same engine, one download page.</p>
+          <p>Mac for now: macOS 13 Ventura or later (Apple Silicon and Intel). Windows is coming soon.</p>
         </details>
         <details>
           <summary><span>What about pricing? How much does Hot Spotter cost?</span></summary>
-          <p>You can scan 20 tracks for free — no account, no time limit. After that, I ask $20 to help support development.</p>
-          <p>No subscription, no locked features, no DLC. Buy Hot Spotter once and own it for life, future updates included. One key covers three computers, and there's a 14-day refund if it isn't for you. Something missing? <a href="mailto:support@hotspotter.studio">Tell us</a>.</p>
+          <p>You can scan 20 tracks for free on each computer, with no account and no time limit. When you need more, buy from inside the app: a 20-Track Pack adds 20 tracks for $5, and you can buy as many as you like. Or go Unlimited for $19 once to help support development.</p>
+          <p>Unlimited covers two computers and adds custom colors. No subscription: everyone gets future updates for free, and both come with a 14-day refund if Hot Spotter isn't for you. Something missing? <a href="mailto:support@hotspotter.studio">Tell us</a>.</p>
         </details>
         <details id="free-tracks">
           <summary><span>How does the free version count tracks?</span></summary>
-          <p>The free version analyzes 20 tracks. A track is a file name inside an album folder, counted once: re-exporting a master to the same file name is free, renaming it or moving the folder counts as new, and a WAV+MP3 pair of the same song counts once.</p>
-          <p>References never count, and neither do failed or cancelled runs. Your reports and history stay readable after the 20 are used.</p>
+          <p>The free version analyzes 20 tracks on each computer. A track is a file name inside an album folder, counted once: re-exporting a master to the same file name is free, renaming it or moving the folder counts as new, and a WAV+MP3 pair of the same song counts once.</p>
+          <p>References never count, and neither do failed or cancelled runs. Free tracks are used first, then pack tracks. Your reports and history stay readable after your tracks run out.</p>
+        </details>
+        <details>
+          <summary><span>Do pack tracks move to my other computer?</span></summary>
+          <p>No. A 20-Track Pack stays on the one computer that redeems it, and it can't be moved later. If you work on two computers, Unlimited covers both.</p>
+          <p>Replacing a computer you use with Unlimited? <a href="mailto:support@hotspotter.studio">Email me</a> and I'll free up its spot.</p>
+        </details>
+        <details>
+          <summary><span>Lost your key?</span></summary>
+          <p>Your key is in the email Dodo Payments sent when you bought Hot Spotter, and in Dodo's customer portal. Still can't find it? <a href="mailto:support@hotspotter.studio">Email me</a> and I'll help.</p>
         </details>
         <details>
           <summary><span>Who made this?</span></summary>
@@ -430,13 +513,13 @@
     <div class="wrap">
       <p class="eyebrow">DOWNLOAD HOT SPOTTER</p>
       <h2 id="download-h">Get your album into full view.</h2>
-      <p class="dl-line">Download now and scan 20 tracks for free, then $20 once. No subscription, no add-ons, no DLC. macOS 13 Ventura or later (Apple Silicon and Intel) and Windows 10 or 11 (beta).</p>
+      <p class="dl-line">Download now and scan 20 tracks for free. Need more? Add 20 tracks for $5, or go Unlimited for $19 once. No subscription. macOS 13 Ventura or later (Apple Silicon and Intel). Windows is coming soon.</p>
       <p class="cta-row">
         <a class="btn" href="download.html">Download</a>
         <a class="ghost micro" href="https://github.com/soundovision/hotspotter/releases" rel="noopener">Release notes →</a>
         <a class="ghost micro" href="mailto:support@hotspotter.studio">Send feedback →</a>
       </p>
-      <p class="micro fine">The Mac app is signed and notarized and updates itself. On Windows, come back here for new versions.</p>
+      <p class="micro fine">The Mac app is signed and notarized and updates itself.</p>
     </div>
   </section>
 
@@ -446,7 +529,7 @@
   <div class="wrap foot-in">
     <p class="foot-mark">
       <img src="img/app-icon.png" alt="" width="20" height="20" loading="lazy" decoding="async">
-    Hot Spotter — Nail your music's loudness &amp; spectrum.</p>
+    Hot Spotter · Nail your music's loudness &amp; spectrum.</p>
     <p class="micro foot-meta">
       <span>© 2026 Sound-O-Vision</span>
       <span aria-hidden="true">·</span>
@@ -455,6 +538,8 @@
       <a href="https://github.com/soundovision/hotspotter" rel="noopener">GitHub</a>
       <span aria-hidden="true">·</span>
       <a href="privacy.html">Privacy</a>
+      <span aria-hidden="true">·</span>
+      <a href="eula.html">License</a>
     </p>
   </div>
 </footer>

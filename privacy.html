@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Privacy — Hot Spotter</title>
+<title>Privacy | Hot Spotter</title>
 <meta name="description" content="Hot Spotter runs entirely on your computer and never sends your audio or results anywhere. What the app and this website do and don't collect.">
 <link rel="canonical" href="https://hotspotter.studio/privacy.html">
 <meta name="theme-color" content="#12151d">
@@ -12,7 +12,7 @@
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Hot Spotter">
-<meta property="og:title" content="Privacy — Hot Spotter">
+<meta property="og:title" content="Privacy | Hot Spotter">
 <meta property="og:description" content="Hot Spotter runs entirely on your computer and never sends your audio or results anywhere. What the app and this website do and don't collect.">
 <meta property="og:url" content="https://hotspotter.studio/privacy.html">
 <meta property="og:image" content="https://hotspotter.studio/img/og-image.png">
@@ -36,8 +36,8 @@
       <span class="wordmark-name">Hot Spotter</span>
     </a>
     <nav class="head-nav" aria-label="Primary">
-      <a class="navlink" href="./#how">How it works</a>
       <a class="navlink" href="./#features">Features</a>
+      <a class="navlink" href="./#pricing">Pricing</a>
       <a class="navlink" href="./#faq">FAQ</a>
       <a class="btn btn-sm" href="download.html">Download</a>
     </nav>
@@ -48,28 +48,46 @@
   <div class="wrap">
     <p class="eyebrow">PRIVACY</p>
     <h1>Your audio never leaves your computer.</h1>
-    <p class="micro legal-date">Last updated 10 October 2026</p>
+    <p class="micro legal-date">Last updated 28 October 2026</p>
 
-    <p class="lede">Hot Spotter is a desktop app. It has no accounts and no telemetry, and it never uploads your audio files, file names, measurements, or notes. This page covers the few things that do touch the internet, and what this website collects.</p>
+    <p class="lede">Hot Spotter is a desktop app. It has no accounts, and it never uploads your audio files, file names, measurements, or notes. Anonymous usage reports are off unless you turn them on. This page covers the few things that do touch the internet, and what this website collects.</p>
 
     <h2>The app</h2>
     <p><strong>Your files stay put.</strong> Hot Spotter reads the audio you open, measures it on your machine, and shows you the results. It never modifies your files. Your scan history, notes, and preferences are stored in local files on your computer, and you can delete them at any time.</p>
-    <p><strong>It phones home for exactly two things.</strong></p>
+    <p><strong>It goes online for three things, and the third is up to you.</strong></p>
     <ul>
       <li><strong>Update check.</strong> On launch the app asks GitHub whether a newer version exists. That request carries your app version and, like any web request, your IP address. Nothing about your audio or your work is sent.</li>
-      <li><strong>License activation.</strong> If you buy a license, the app sends your license key and a device label to our licensing provider, Lemon Squeezy, to activate it, and again when you deactivate it. Versions up to 0.75.1 use your computer's name as that label; later versions send a generic one, "Mac" or "Windows PC". That is the only data involved. Your purchase itself, including your email and payment details, is handled by Lemon Squeezy as merchant of record under <a href="https://www.lemonsqueezy.com/privacy" rel="noopener">its own privacy policy</a>; we see your email and order number, not your card.</li>
+      <li><strong>License activation.</strong> If you buy a license, the app sends your license key and a generic device label, "Mac" or "Windows PC", to our payment provider, Dodo Payments, to activate it, and again when you deactivate it. Dodo's reply includes the name and email you bought with; the app throws those away and keeps only the key, the product, an activation ID and the date. Your purchase itself, including your email and payment details, is handled by Dodo Payments as merchant of record under <a href="https://dodopayments.com/legal/privacy-policy" rel="noopener">its own privacy policy</a>; we see your email and order, not your card. (Versions before 1.0 activated through Lemon Squeezy, and versions up to 0.75.1 sent your computer's name as the label.)</li>
+      <li><strong>Usage reports, if you turn them on.</strong> Anonymous reports about how the app is used, listed in full <a href="#usage">below</a>.</li>
     </ul>
-    <p>That is the whole list. No analytics, no crash reporting, no advertising identifiers, nothing running in the background.</p>
+    <p>That is the whole list. No crash reporting, no advertising identifiers, nothing running in the background.</p>
+
+    <h2 id="usage">Usage reports</h2>
+    <p><strong>Off unless you turn them on.</strong> When you first open Hot Spotter 1.0, a checkbox asks whether to send anonymous usage reports, and it starts unticked. You can change your answer anytime in Settings.</p>
+    <p><strong>Where they go.</strong> Reports go to PostHog, an analytics service, on its US cloud, so they are stored in the United States under <a href="https://posthog.com/privacy" rel="noopener">PostHog's privacy policy</a>. PostHog is set to discard your IP address.</p>
+    <p><strong>Every report includes</strong> the app version, your operating system and its version, your processor type (such as Apple Silicon or Intel), and a random install ID that isn't tied to your name, email, license or files.</p>
+    <p><strong>These are the reports, and there are no others:</strong></p>
+    <ul>
+      <li><strong>App opened.</strong> Nothing more.</li>
+      <li><strong>Scan finished.</strong> How many tracks, as a range (1, 2-5, 6-12, 13-20, 21-50 or 51+); which formats (WAV, AIFF, FLAC, MP3); how long the scan took, as a range (under 10 seconds, 10-30, 30-60, 60-180 or over 180); and how many files failed, as a range (0, 1, 2-5 or 6+).</li>
+      <li><strong>Feature used.</strong> Which one: Overview, Track Details, Tonal Balance, Reference, the leniency slider, exports, palette or theme. Each is sent at most once each time you open the app.</li>
+      <li><strong>Out of tracks.</strong> The out-of-tracks window opened.</li>
+      <li><strong>Buy clicked.</strong> Which product (20-Track Pack or Unlimited), and where you clicked it: the out-of-tracks window, the License panel, the welcome screen, or the locked custom colors.</li>
+      <li><strong>Key activated.</strong> Which kind: a pack or Unlimited.</li>
+      <li><strong>Error.</strong> The type only: a scan that failed or stopped, a folder with no audio, a failed export, a reference that wouldn't load, or a key that couldn't activate (not found, refunded or disabled, at its computer limit, or no connection).</li>
+    </ul>
+    <p><strong>Never sent:</strong> file or folder names, paths, audio, per-track measurements, license keys, your email, or your IP address (discarded).</p>
 
     <h2>This website</h2>
     <p><strong>Hosting.</strong> hotspotter.studio is a static site served by GitHub Pages. GitHub keeps ordinary server logs, including IP addresses, under <a href="https://docs.github.com/site-policy/privacy-policies/github-general-privacy-statement" rel="noopener">its privacy statement</a>.</p>
     <p><strong>Analytics.</strong> We use Google Analytics 4 to count visits and see which parts of the page get read. Advertising features are turned off. Analytics sets cookies on hotspotter.studio to tell returning visits apart, and Google processes that data on our behalf under <a href="https://policies.google.com/privacy" rel="noopener">its privacy policy</a>. Data is kept for 14 months.</p>
     <p><strong>Your choice.</strong> If your browser reports a European time zone, the site asks before loading Analytics and loads nothing until you accept. You can change your answer at any time with the "Cookie choices" link in the footer. If your browser sends a Global Privacy Control signal, we treat that as a decline everywhere.</p>
+    <p><strong>After you buy.</strong> The thank-you page that shows your license key loads no analytics, and it removes the key from the address bar once it has read it.</p>
     <p><strong>Email.</strong> If you write to us, we keep the conversation so we can help you. We don't add you to any list.</p>
 
     <h2>Your rights and who we are</h2>
-    <p>If you are in the EU, EEA, UK, or Switzerland, you can ask what we hold about you, ask us to correct or delete it, or object to processing. In practice the only thing we are likely to hold is a support email thread or a license record, and we will handle any request within 30 days.</p>
-    <p>Hot Spotter is made by Christopher Davidson, doing business as Sound-O-Vision. Questions about this page: <a href="mailto:support@hotspotter.studio">support@hotspotter.studio</a>.</p>
+    <p>If you are in the EU, EEA, UK, or Switzerland, you can ask what we hold about you, ask us to correct or delete it, or object to processing. In practice the only things we are likely to hold are a support email thread, a license record, or anonymous usage reports if you turned them on, and we will handle any request within 30 days.</p>
+    <p>Hot Spotter is published by Sound-O-Vision, operated by Christopher Davidson. Questions about this page: <a href="mailto:support@hotspotter.studio">support@hotspotter.studio</a>.</p>
     <p>If this page changes in a way that matters, the date at the top moves and the change is described in the release notes.</p>
   </div>
 </main>
@@ -78,7 +96,7 @@
   <div class="wrap foot-in">
     <p class="foot-mark">
       <img src="img/app-icon.png" alt="" width="20" height="20" loading="lazy" decoding="async">
-      Hot Spotter — Nail your music's loudness &amp; spectrum.
+      Hot Spotter · Nail your music's loudness &amp; spectrum.
     </p>
     <p class="micro foot-meta">
       <span>© 2026 Sound-O-Vision</span>
@@ -88,6 +106,8 @@
       <a href="https://djcutman.com" rel="noopener">Built by DJ Cutman</a>
       <span aria-hidden="true">·</span>
       <a href="https://github.com/soundovision/hotspotter" rel="noopener">GitHub</a>
+      <span aria-hidden="true">·</span>
+      <a href="eula.html">License</a>
     </p>
   </div>
 </footer>
