@@ -242,7 +242,7 @@
 
       <figure class="frame hero-shot rise rise-shot">
         <div class="chrome" aria-hidden="true"><span></span><span></span><span></span></div>
-        <a class="zoom" href="img/app-track-details.webp" target="_blank" rel="noopener" aria-label="Open full-size screenshot: Track Details"><img src="img/app-track-details.webp" srcset="img/app-track-details-1200.webp 1200w, img/app-track-details.webp 2400w" sizes="(max-width: 900px) calc(100vw - 2.5rem), 56vw" width="2400" height="1560" fetchpriority="high" decoding="async" alt="Hot Spotter's Track Details view: a tracklist of 18 tinted waveforms on the left, and the focused track, &quot;Ocarina of Time Flip&quot; by The Deli, with its loudness-tinted waveform, LUFS stats and a spot note on the right."></a>
+        <a class="zoom" href="img/app-track-details.webp" target="_blank" rel="noopener" aria-label="Open full-size screenshot: Track Details"><img src="img/app-track-details.webp" srcset="img/app-track-details-1200.webp 1200w, img/app-track-details.webp 2400w" width="1053" height="930" fetchpriority="high" decoding="async" alt="Hot Spotter's Track Details view: a tracklist of 18 tinted waveforms on the left, and the focused track, &quot;Ocarina of Time Flip&quot; by The Deli, with its loudness-tinted waveform, LUFS stats and a spot note on the right."></a>
       </figure>
     </section>
   </div>
@@ -292,7 +292,7 @@
         <article class="row row-wide row-ml">
           <figure class="frame media">
             <div class="chrome" aria-hidden="true"><span></span><span></span><span></span></div>
-            <a class="zoom" href="img/app-album-overview.webp" target="_blank" rel="noopener" aria-label="Open full-size screenshot: Overview"><img src="img/app-album-overview.webp" srcset="img/app-album-overview-1200.webp 1200w, img/app-album-overview.webp 2400w" sizes="(max-width: 900px) calc(100vw - 2.5rem), min(52vw, 600px)" width="2400" height="1560" loading="lazy" decoding="async" alt="Overview: a loudness bar graph of 18 tracks around the album average of −12.4 LUFS, each bar showing how far its track sits from the average."></a>
+            <a class="zoom" href="img/app-tracks-tone.webp" target="_blank" rel="noopener" aria-label="Open full-size screenshot: Tracks"><img src="img/app-tracks-tone.webp" width="1053" height="930" loading="lazy" decoding="async" alt="Hot Spotter's Tracks view: 18 tracks with heat-colored waveforms beside one track's details, its notes and its tonal balance against the album."></a>
             <figcaption class="micro">18 tracks scanned and compared in a single sortable view.</figcaption>
           </figure>
           <div class="row-text">
@@ -554,6 +554,33 @@
   }
   openHash();
   window.addEventListener("hashchange", openHash);
+})();
+
+// Screenshots open in a lightbox: the X, Esc or a click outside the image
+// closes it. Without JS (or with ⌘/Ctrl-click) the links open the image.
+(function () {
+  var links = document.querySelectorAll("a.zoom");
+  if (!links.length || !window.HTMLDialogElement) return;
+  var box = document.createElement("dialog");
+  box.className = "lightbox";
+  box.innerHTML = '<button type="button" class="lightbox-close" aria-label="Close">' +
+    '<svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><path d="M3 3l12 12M15 3L3 15" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>' +
+    '</button><img alt="">';
+  document.body.appendChild(box);
+  var img = box.querySelector("img");
+  box.querySelector(".lightbox-close").addEventListener("click", function () { box.close(); });
+  box.addEventListener("click", function (e) { if (e.target === box) box.close(); });
+  Array.prototype.forEach.call(links, function (a) {
+    a.addEventListener("click", function (e) {
+      if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button !== 0) return;
+      e.preventDefault();
+      var thumb = a.querySelector("img");
+      img.src = a.getAttribute("href");
+      img.alt = thumb ? thumb.alt : "";
+      box.setAttribute("aria-label", (a.getAttribute("aria-label") || "Screenshot").replace(/^Open full-size screenshot: /, ""));
+      box.showModal();
+    });
+  });
 })();
 
 // "Make it yours": the palette strip. palRamp is copied verbatim from
