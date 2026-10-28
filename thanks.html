@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta name="referrer" content="no-referrer">
+<meta name="robots" content="noindex">
+<!-- The URL arrives carrying the buyer's key and email: the referrer meta stays first, so no request sends them, and this page loads no analytics. -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Thanks for buying Hot Spotter</title>
+<meta name="theme-color" content="#12151d">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" type="image/svg+xml" href="/img/favicon.svg">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preload" href="/fonts/SpaceGrotesk-var.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/SpaceMono-Regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/site.css">
+<style>
+.legal .keys { list-style: none; margin-top: 1.75rem; padding: 0; }
+.keys li { display: flex; flex-wrap: wrap; align-items: center; gap: .25rem 1.25rem; }
+.keys code { padding: .6rem .9rem; border: 1px solid var(--divider); border-radius: 8px; background: var(--strip); color: var(--fg); font-family: var(--mono); font-size: 1.05rem; overflow-wrap: anywhere; }
+.keys button { padding: 0; border: 0; background: none; font: inherit; cursor: pointer; }
+</style>
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-head">
+  <div class="wrap head-in">
+    <a class="wordmark" href="/">
+      <img src="/img/favicon.svg" alt="" width="24" height="24" decoding="async">
+      <span class="wordmark-name">Hot Spotter</span>
+    </a>
+    <nav class="head-nav" aria-label="Primary">
+      <a class="navlink" href="/#how">How it works</a>
+      <a class="navlink" href="/#features">Features</a>
+      <a class="navlink" href="/#faq">FAQ</a>
+      <a class="btn btn-sm" href="/download.html">Download</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main" class="sec legal">
+  <div class="wrap">
+    <h1>Thanks for buying Hot Spotter</h1>
+    <div id="with-key" hidden>
+      <ul class="keys" id="keys"></ul>
+      <p class="cta-row"><a class="btn" id="activate">Activate in Hot Spotter</a></p>
+      <p>Or open Hot Spotter, choose License… in the Hot Spotter menu, paste the key and click Activate. Your key is also in your purchase email.</p>
+      <p>Don't have Hot Spotter yet? <a href="/download.html">Download it</a></p>
+    </div>
+    <p class="lede" id="no-key">We couldn't find a key on this page. Your key is in your purchase email, or write to <a href="mailto:support@hotspotter.studio">support@hotspotter.studio</a>.</p>
+  </div>
+</main>
+
+<footer class="site-foot">
+  <div class="wrap foot-in">
+    <p class="foot-mark">
+      <img src="/img/favicon.svg" alt="" width="20" height="20" loading="lazy" decoding="async">
+    Hot Spotter · Nail your music's loudness &amp; spectrum.</p>
+    <p class="micro foot-meta">
+      <span>© 2026 Sound-O-Vision</span>
+      <span aria-hidden="true">·</span>
+      <a href="https://djcutman.com" rel="noopener">Built by DJ Cutman</a>
+      <span aria-hidden="true">·</span>
+      <a href="https://github.com/soundovision/hotspotter" rel="noopener">GitHub</a>
+      <span aria-hidden="true">·</span>
+      <a href="/privacy.html">Privacy</a>
+    </p>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var q = new URLSearchParams(location.search);
+  var licenseKey = q.get("license_key") || "";
+  history.replaceState(null, "", location.pathname);
+
+  var keys = licenseKey.split(",").filter(function (k) { return /^[A-Za-z0-9_-]{1,100}$/.test(k); }).slice(0, 10);
+  if (!keys.length) return;
+
+  var list = document.getElementById("keys");
+  keys.forEach(function (key) {
+    var li = document.createElement("li");
+    var box = document.createElement("code");
+    box.textContent = key;
+    var copy = document.createElement("button");
+    copy.type = "button";
+    copy.className = "ghost";
+    copy.textContent = "Copy";
+    copy.addEventListener("click", function () {
+      navigator.clipboard.writeText(key).then(function () {
+        copy.textContent = "Copied";
+        setTimeout(function () { copy.textContent = "Copy"; }, 1500);
+      });
+    });
+    li.appendChild(box);
+    li.appendChild(copy);
+    list.appendChild(li);
+  });
+  document.getElementById("activate").href = "hotspotter://activate?key=" + encodeURIComponent(keys.join(","));
+  document.getElementById("no-key").hidden = true;
+  document.getElementById("with-key").hidden = false;
+})();
+</script>
+
+</body>
+</html>

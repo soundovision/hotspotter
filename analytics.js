@@ -14,6 +14,7 @@
 //   • The choice is stored per browser; a "Cookie choices" footer link
 //     re-opens the banner so consent can be withdrawn as easily as given.
 (function () {
+  if (/[?&](license_key|email)=/.test(location.search)) return; // a buyer's key or email in the URL: load nothing
   var GA_ID = "G-VKQMD5HFYX";     // Hot Spotter — GA4 property
   var PRIVACY_URL = "/privacy.html";
   var KEY = "hs-consent";         // "granted" | "denied"

@@ -1,13 +1,11 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <!-- Matches the shipping app icon's green; bars = the loudness-tinted
-       waveform, one hot spot flaring amber. -->
-  <rect width="64" height="64" rx="14" fill="#6bbf6a"/>
-  <g fill="#0e1c12">
-    <rect x="10" y="26" width="5" height="12" rx="2.5"/>
-    <rect x="18" y="20" width="5" height="24" rx="2.5"/>
-    <rect x="26" y="14" width="5" height="36" rx="2.5"/>
-    <rect x="42" y="18" width="5" height="28" rx="2.5"/>
-    <rect x="50" y="24" width="5" height="16" rx="2.5"/>
-  </g>
-  <rect x="34" y="10" width="5" height="44" rx="2.5" fill="#f0973c"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <!-- The app icon's tile and bars at favicon size (icon refresh 2026-10-27).
+       Every bar edge sits on an even unit: whole pixels at 16 and 32 px. -->
+  <defs>
+  <linearGradient id="tdsg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2c3448"/><stop offset="1" stop-color="#181c28"/></linearGradient>
+  <linearGradient id="tdse" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="rgba(255,255,255,0.20)"/><stop offset="1" stop-color="rgba(255,255,255,0.08)"/></linearGradient>
+  <clipPath id="tdsc"><path d="M32 16L32 20.994C32 24.163 32 25.747 31.461 27.453C30.783 29.316 29.316 30.783 27.453 31.461C25.747 32 24.163 32 20.994 32L11.006 32C7.837 32 6.253 32 4.547 31.461C2.684 30.783 1.217 29.316 0.539 27.453C0 25.747 0 24.163 0 20.994L0 11.006C0 7.837 0 6.253 0.539 4.547C1.217 2.684 2.684 1.217 4.547 0.539C6.253 0 7.837 0 11.006 0L20.994 0C24.163 0 25.747 0 27.453 0.539C29.316 1.217 30.783 2.684 31.461 4.547C32 6.253 32 7.837 32 11.006Z"/></clipPath><radialGradient id="tdsglow"><stop offset="0" stop-color="rgb(224,168,60)" stop-opacity="0.34"/><stop offset="0.6" stop-color="rgb(224,168,60)" stop-opacity="0.102"/><stop offset="1" stop-color="rgb(224,168,60)" stop-opacity="0"/></radialGradient></defs>
+  <path d="M32 16L32 20.994C32 24.163 32 25.747 31.461 27.453C30.783 29.316 29.316 30.783 27.453 31.461C25.747 32 24.163 32 20.994 32L11.006 32C7.837 32 6.253 32 4.547 31.461C2.684 30.783 1.217 29.316 0.539 27.453C0 25.747 0 24.163 0 20.994L0 11.006C0 7.837 0 6.253 0.539 4.547C1.217 2.684 2.684 1.217 4.547 0.539C6.253 0 7.837 0 11.006 0L20.994 0C24.163 0 25.747 0 27.453 0.539C29.316 1.217 30.783 2.684 31.461 4.547C32 6.253 32 7.837 32 11.006Z" fill="url(#tdsg)"/>
+  <g clip-path="url(#tdsc)"><ellipse cx="16" cy="16" rx="7" ry="11" fill="url(#tdsglow)"/><rect x="6" y="8" width="2" height="16" rx="1" fill="rgb(166,181,91)"/><rect x="10" y="10" width="2" height="12" rx="1" fill="rgb(113,187,113)"/><rect x="14" y="4" width="4" height="24" rx="1" fill="rgb(224,168,60)"/><rect x="20" y="12" width="2" height="8" rx="1" fill="rgb(96,181,111)"/><rect x="24" y="8" width="2" height="16" rx="1" fill="rgb(166,181,91)"/></g>
+  <path d="M32 16L32 20.994C32 24.163 32 25.747 31.461 27.453C30.783 29.316 29.316 30.783 27.453 31.461C25.747 32 24.163 32 20.994 32L11.006 32C7.837 32 6.253 32 4.547 31.461C2.684 30.783 1.217 29.316 0.539 27.453C0 25.747 0 24.163 0 20.994L0 11.006C0 7.837 0 6.253 0.539 4.547C1.217 2.684 2.684 1.217 4.547 0.539C6.253 0 7.837 0 11.006 0L20.994 0C24.163 0 25.747 0 27.453 0.539C29.316 1.217 30.783 2.684 31.461 4.547C32 6.253 32 7.837 32 11.006Z" fill="none" stroke="url(#tdse)" stroke-width="1.2" clip-path="url(#tdsc)"/>
 </svg>
