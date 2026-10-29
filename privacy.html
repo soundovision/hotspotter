@@ -48,7 +48,7 @@
   <div class="wrap">
     <p class="eyebrow">PRIVACY</p>
     <h1>Your audio never leaves your computer.</h1>
-    <p class="micro legal-date">Last updated 28 October 2026</p>
+    <p class="micro legal-date">Last updated 29 October 2026</p>
 
     <p class="lede">Hot Spotter is a desktop app. It has no accounts, and it never uploads your audio files, file names, measurements, or notes. Anonymous usage reports are off unless you turn them on. This page covers the few things that do touch the internet, and what this website collects.</p>
 
@@ -64,24 +64,24 @@
 
     <h2 id="usage">Usage reports</h2>
     <p><strong>Off unless you turn them on.</strong> When you first open Hot Spotter 1.0, a checkbox asks whether to send anonymous usage reports, and it starts unticked. You can change your answer anytime in Settings.</p>
-    <p><strong>Where they go.</strong> Reports go to PostHog, an analytics service, on its US cloud, so they are stored in the United States under <a href="https://posthog.com/privacy" rel="noopener">PostHog's privacy policy</a>. PostHog is set to discard your IP address.</p>
-    <p><strong>Every report includes</strong> the app version, your operating system and its version, your processor type (such as Apple Silicon or Intel), and a random install ID that isn't tied to your name, email, license or files.</p>
+    <p><strong>Where they go.</strong> Reports go to PostHog, an analytics service, on its US cloud, so they are stored in the United States under <a href="https://posthog.com/privacy" rel="noopener">PostHog's privacy policy</a>. PostHog works out your country from your IP address, then discards the IP address.</p>
+    <p><strong>Every report includes</strong> the app version, your operating system and its version, your processor type (such as Apple Silicon or Intel), your country, and a random install ID that isn't tied to your name, email, license or files.</p>
     <p><strong>These are the reports, and there are no others:</strong></p>
     <ul>
-      <li><strong>App opened.</strong> Nothing more.</li>
+      <li><strong>App opened.</strong> Which license you have: free, a 20-Track Pack or Unlimited.</li>
       <li><strong>Scan finished.</strong> How many tracks, as a range (1, 2-5, 6-12, 13-20, 21-50 or 51+); which formats (WAV, AIFF, FLAC, MP3); how long the scan took, as a range (under 10 seconds, 10-30, 30-60, 60-180 or over 180); and how many files failed, as a range (0, 1, 2-5 or 6+).</li>
       <li><strong>Feature used.</strong> Which one: Overview, Track Details, Tonal Balance, Reference, the leniency slider, exports, palette or theme. Each is sent at most once each time you open the app.</li>
       <li><strong>Out of tracks.</strong> The out-of-tracks window opened.</li>
-      <li><strong>Buy clicked.</strong> Which product (20-Track Pack or Unlimited), and where you clicked it: the out-of-tracks window, the License panel, the welcome screen, or the locked custom colors.</li>
+      <li><strong>Buy clicked.</strong> Which product (20-Track Pack or Unlimited), and where you clicked it: the out-of-tracks window, the License panel, the welcome screen, or the locked custom colors; and which license you had when you clicked.</li>
       <li><strong>Key activated.</strong> Which kind: a pack or Unlimited.</li>
-      <li><strong>Error.</strong> The type only: a scan that failed or stopped, a folder with no audio, a failed export, a reference that wouldn't load, or a key that couldn't activate (not found, refunded or disabled, at its computer limit, or no connection).</li>
+      <li><strong>Error.</strong> The type only: a scan that failed or stopped (and why: every file failed, the analysis crashed, or another scan used up the tracks it was waiting for), a folder with no audio, a failed export, a reference that wouldn't load, or a key that couldn't activate (not found, refunded or disabled, at its computer limit, or no connection).</li>
     </ul>
     <p><strong>Never sent:</strong> file or folder names, paths, audio, per-track measurements, license keys, your email, or your IP address (discarded).</p>
 
     <h2>This website</h2>
     <p><strong>Hosting.</strong> hotspotter.studio is a static site served by GitHub Pages. GitHub keeps ordinary server logs, including IP addresses, under <a href="https://docs.github.com/site-policy/privacy-policies/github-general-privacy-statement" rel="noopener">its privacy statement</a>.</p>
-    <p><strong>Analytics.</strong> We use Google Analytics 4 to count visits and see which parts of the page get read. Advertising features are turned off. Analytics sets cookies on hotspotter.studio to tell returning visits apart, and Google processes that data on our behalf under <a href="https://policies.google.com/privacy" rel="noopener">its privacy policy</a>. Data is kept for 14 months.</p>
-    <p><strong>Your choice.</strong> If your browser reports a European time zone, the site asks before loading Analytics and loads nothing until you accept. You can change your answer at any time with the "Cookie choices" link in the footer. If your browser sends a Global Privacy Control signal, we treat that as a decline everywhere.</p>
+    <p><strong>Analytics.</strong> We use Google Analytics 4 to count visits and see which parts of the page get read. Advertising features are turned off. Analytics sets cookies on hotspotter.studio to tell returning visits apart, and Google processes that data on our behalf under <a href="https://policies.google.com/privacy" rel="noopener">its privacy policy</a>. Data is kept for 14 months. We also use PostHog, on its US cloud, to count page views and clicks. PostHog sets no cookies and stores nothing in your browser; it works out your country from your IP address, then discards the IP address.</p>
+    <p><strong>Your choice.</strong> If your browser reports a European time zone, the site asks before loading Google Analytics or PostHog and loads neither until you accept. You can change your answer at any time with the "Cookie choices" link in the footer. If your browser sends a Global Privacy Control signal, we treat that as a decline everywhere.</p>
     <p><strong>After you buy.</strong> The thank-you page that shows your license key loads no analytics, and it removes the key from the address bar once it has read it.</p>
     <p><strong>Email.</strong> If you write to us, we keep the conversation so we can help you. We don't add you to any list.</p>
 
