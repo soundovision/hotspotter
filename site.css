@@ -287,7 +287,8 @@ section[id], details[id], #main, .legal h2[id] { scroll-margin-top: calc(var(--h
   border-radius: 50%;
   background: var(--line);
 }
-.frame img {
+.frame img,
+.frame video {
   display: block;
   width: 100%;
   height: auto;
@@ -397,17 +398,11 @@ html:has(.lightbox[open]) { overflow: hidden; }
 
 /* --- How it works ---------------------------------------------------------- */
 .sec-how { padding-block: clamp(3.5rem, 6.5vw, 5.5rem) clamp(2rem, 4vw, 3.25rem); }
+/* each step is a wide .row with its clip */
 .steps {
   list-style: none;
   margin: 0;
   padding: 0;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  column-gap: clamp(1.5rem, 3vw, 2.75rem);
-}
-.steps li + li {
-  border-left: 1px solid var(--line);
-  padding-left: clamp(1.5rem, 3vw, 2.75rem);
 }
 .steps .num {
   display: block;
@@ -418,7 +413,6 @@ html:has(.lightbox[open]) { overflow: hidden; }
   color: var(--faint);
 }
 .steps h3 { margin: 1.125rem 0 .5rem; }
-.steps p { max-width: 34ch; }
 
 /* --- Feature tour ---------------------------------------------------------- */
 .row {
@@ -439,6 +433,8 @@ html:has(.lightbox[open]) { overflow: hidden; }
 .row-ml > .row-text { grid-column: 8 / 13; }
 .row-mr > .media    { grid-column: 7 / 13; }
 .row-mr > .row-text { grid-column: 1 / 6; }
+.row-mr.row-wide > .media    { grid-column: 6 / 13; }
+.row-mr.row-wide > .row-text { grid-column: 1 / 5; }
 
 .row-text .kicker + h3 { margin-top: .875rem; }
 .row-text h3 + p,
@@ -452,38 +448,46 @@ html:has(.lightbox[open]) { overflow: hidden; }
 .sec-palettes {
   border-top: 1px solid var(--line);
   background: var(--bg);
+}
+/* The panel runs behind the screenshot, chips and note; its padding bleeds
+   into the gutter, so the content stays aligned with the heading. */
+.pal-panel {
+  --pp: clamp(.75rem, 2vw, 1.5rem);
+  margin: calc(-1 * var(--pp));
+  padding: var(--pp);
+  border-radius: calc(var(--radius) + 6px);
+  background: var(--bg);
   transition: background .35s var(--ease), color .35s var(--ease);
 }
-/* Light: the whole section flips, using the app's own light tokens. */
-.sec-palettes[data-theme="light"] {
+/* Light: only the panel flips, using the app's own light tokens. */
+.pal-panel[data-theme="light"] {
   --bg: #eef0f4;  --strip: #e3e6ec;
   --fg: #1c1e26;  --fg2: #575c6c;  --faint: #5d6274;
   --line: rgba(28,30,38,.15);  --divider: rgba(28,30,38,.22);
   --acc: #1e7b4b;
   color: var(--fg);
 }
-.sec-palettes[data-theme="light"] .pal-chip.on { background: rgba(30,123,75,.08); }
-.pal-stage {
+.pal-panel[data-theme="light"] .pal-chip.on { background: rgba(30,123,75,.08); }
+/* One screenshot per palette, stacked; the chips crossfade between them. */
+.pal-stack {
+  position: relative;
+  aspect-ratio: 2120 / 1088;
+  overflow: hidden;
+  border: 1px solid var(--divider);
+  border-top: 0;
+  border-radius: 0 0 var(--radius) var(--radius);
   background: var(--strip);
-  border-top: 1px solid var(--line);
-  border-bottom: 1px solid var(--line);
-  transition: background .35s var(--ease);
 }
-.pal-strip {
-  display: block;
-  width: 100%;
-  height: clamp(72px, 6.5vw, 96px);
+.pal-stack img {
+  position: absolute;
+  inset: 0;
+  height: 100%;
+  border: 0;
+  border-radius: 0;
+  opacity: 0;
+  transition: opacity .4s var(--ease);
 }
-.pal-strip rect {
-  fill: #2a3348;
-  transform-box: fill-box;
-  transform-origin: center;
-  transform: scaleY(0);
-  transition: fill .2s linear, transform .3s var(--ease);
-  transition-delay: calc(var(--i) * 3ms);
-}
-.sec-palettes[data-theme="light"] .pal-strip rect { fill: #c9cdd6; }
-.pal-strip.drawn rect { transform: none; }
+.pal-stack img.on { opacity: 1; }
 
 .pal-bar {
   display: flex;
@@ -521,8 +525,8 @@ html:has(.lightbox[open]) { overflow: hidden; }
 .pal-note { margin-top: 1.25rem; }
 
 @media (prefers-reduced-motion: reduce) {
-  .pal-strip rect { transform: none; transition: none; }
-  .pal-stage { transition: none; }
+  .pal-panel,
+  .pal-stack img { transition: none; }
 }
 
 /* --- Pricing --------------------------------------------------------------- */
@@ -667,21 +671,14 @@ html:has(.lightbox[open]) { overflow: hidden; }
   .hero-shot { width: 100%; }
   .hero .lede { max-width: none; }
 
-  .steps { grid-template-columns: 1fr; row-gap: 2.25rem; }
-  .steps li + li {
-    border-left: 0;
-    padding-left: 0;
-    border-top: 1px solid var(--line);
-    padding-top: 2.25rem;
-  }
-  .steps p { max-width: 52ch; }
-
   .row { grid-template-columns: 1fr; }
   .row > .media,
   .row > .row-text { grid-row: auto; }
   .row > .media,
   .row-ml.row-wide > .media,
   .row-ml.row-wide > .row-text,
+  .row-mr.row-wide > .media,
+  .row-mr.row-wide > .row-text,
   .row-ml > .media,
   .row-ml > .row-text,
   .row-mr > .media,
