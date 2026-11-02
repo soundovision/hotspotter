@@ -636,7 +636,12 @@
       if (e.isIntersecting && !reduced()) play(e.target); else e.target.pause();
     });
   }, { threshold: 0.25 });
-  clips.forEach(function (v) { io.observe(v); });
+  clips.forEach(function (v) {
+    // Safari drops the poster a beat before the first frame paints; with the
+    // poster as the background too, that beat shows the poster, not a blank box.
+    v.style.background = "var(--strip) url(" + v.getAttribute("poster") + ") 0 0 / 100% 100% no-repeat";
+    io.observe(v);
+  });
   if (reduced()) rest();
   if (mq) {
     var change = function () {
