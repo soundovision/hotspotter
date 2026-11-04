@@ -821,3 +821,6 @@ html:has(.lightbox[open]) { overflow: hidden; }
   .dl-grid { grid-template-columns: 1fr; }
   .dl-tile { position: static; order: 2; }
 }
+
+/* a split column with a clip above its heading */
+.row-text > .frame + h3 { margin-top: 1.5rem; }
